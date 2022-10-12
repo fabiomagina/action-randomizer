@@ -1,0 +1,20 @@
+.pageview  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.pageview .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3%;
+    flex-wrap: wrap;
+}
+
+.dashboard-view {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+}

@@ -1,0 +1,9 @@
+div.footer {
+    grid-area: footer;
+    background-color: black;
+    color: rgb(162, 162, 162);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}
