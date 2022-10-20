@@ -1,4 +1,3 @@
-import { addRandomNumbers } from "./addRandomNumbers"
 import { axios_post } from "./axios"
 import axios from 'axios'
 import { range } from 'lodash'
@@ -28,10 +27,9 @@ function newAction(old) {
         let old_numbers = line.match(/(\d+)/g)
         let new_numbers = addRandom(old_numbers)
         old_numbers.map((n, i) => {
-            if (n != 0) {
+            if (n !== 0) {
                 line = line.replace(n, new_numbers[i])
-            }
-            else return 0
+            } else return 0
         })
         action += line + '\n'
 

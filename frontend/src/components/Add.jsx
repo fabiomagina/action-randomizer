@@ -3,6 +3,7 @@ import "./Add.css"
 import {axios_post_action} from "../funcs/axios";
 
 
+
 const initialState = {
     number: 0,
     action: ''
@@ -42,7 +43,7 @@ class Add extends Component {
                         </div>
                         <div className="row ">
                             <label>Script: </label>
-                            <textarea name="Text1" cols="40" rows="5"  id="n-input" name="action" type="text" value={this.state.action}
+                            <textarea cols="40" rows="5"  id="n-input" name="action" type="text" value={this.state.action}
                                 onChange={e => this.updateAction(e)} />
                         </div>
                         <button className="run-btn" onClick={() => axios_post_action(this.state.number, this.state.action, this.clear)}>Add</button>

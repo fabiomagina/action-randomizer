@@ -13,5 +13,10 @@
       "list": []
     }
   ],
-  "generated": []
+  "generated": [],
+  "counter": {
+    "actions": 2,
+    "types": 3,
+    "created": 0
+  }
 }
