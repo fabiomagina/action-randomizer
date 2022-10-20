@@ -14,6 +14,7 @@ class Add extends Component {
         super(props)
 
         this.state = { ...initialState }
+        this.clear = this.clear.bind(this)
     }
 
     updateNumber(e) {
@@ -23,6 +24,10 @@ class Add extends Component {
     updateAction(e) {
         const action = e.target.value
         this.setState({ action })
+    }
+
+    clear() {
+        this.setState({ ...initialState })
     }
 
     render() {
@@ -37,10 +42,10 @@ class Add extends Component {
                         </div>
                         <div className="row ">
                             <label>Script: </label>
-                            <input className="array" id="n-input" name="action" type="text" value={this.state.action}
+                            <textarea name="Text1" cols="40" rows="5"  id="n-input" name="action" type="text" value={this.state.action}
                                 onChange={e => this.updateAction(e)} />
                         </div>
-                        <button className="run-btn" onClick={() => axios_post_action(this.state.number, this.state.action)}>Add</button>
+                        <button className="run-btn" onClick={() => axios_post_action(this.state.number, this.state.action, this.clear)}>Add</button>
                     
                 </div>
 

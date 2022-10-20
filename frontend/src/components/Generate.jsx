@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Generate.css"
+import { runRandomizer } from "../funcs/runRandomizer";
 
 
 const initialState = {
@@ -30,7 +31,7 @@ class Generate extends Component {
                             <input className="n-input" name="number" type="number" value={this.state.number} 
                                 onChange={e => this.updateLoopsNumber(e)}/>
                         </div>
-                        <button className="run-btn" onClick={() => console.log(this.state.number)}>Run Generator</button>
+                        <button className="run-btn" onClick={() => runRandomizer(1,1)}>Run Generator</button>
                     
                 </div>
           
