@@ -17,12 +17,6 @@ const PageView = (props) => {
         }
     }, [dashboard])
 
-    useEffect(function () {
-        getCounter(reloadCounter)
-    }, [])
-    useEffect(function () {
-        getCounter(reloadCounter)
-    }, [props.reload])
 
     function handler(setter) {
         setter(current => !current)
@@ -40,16 +34,12 @@ const PageView = (props) => {
                 </div>
 
                 <div className="dashboard-view">
-                    <Dashboard counter={counter} />
+                    <Dashboard reload={props.reload} />
                 </div>
 
             </div>
 
-
-
-
-            <Menu dashboardHandler={() => handler(setDashboard)}
-            />
+            <Menu dashboardHandler={() => handler(setDashboard)} />
         </>
     )
 }

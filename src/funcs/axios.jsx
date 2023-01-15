@@ -7,10 +7,9 @@ export function sendAction(type, action, callback, reload) {
     axios.get(url)
         .then(res => res.data)
         .then(data => {
-            let list = data.list
+            let  list = data.list
             list.push(action)
-            
-            axios.put(url, { id: type, list: list })
+            axios.put(url, { id: type, title: data.title, list: list })
         })
         .then(() => updateCounterDb(reload))
         .then(() => callback())
@@ -27,7 +26,7 @@ export function updateCounterDb(reload, type = 'actions') {
     axios.get(url)
         .then(res => res.data)
         .then(res => {
-            
+
             let counter = { ...res, [type]: res[type] + 1 }
             axios.put(url, counter)
             reload(counter)
@@ -41,13 +40,14 @@ export function getCounter(reload) {
 }
 
 export function showResults(callback) {
-    axios.get(`${baseUrl}/generated`) 
+    axios.get(`${baseUrl}/generated`)
         .then(res => res.data)
         .then(callback)
-    }
-
-export function getActionsById(arrayIds) {
-    axios.get(`${baseUrl}/actions/${arrayIds})`)
-        .then(res => res.data)
-        .then(console.log)
 }
+
+export function getActions() {
+    return axios.get(`${baseUrl}/pures`)
+        .then(res => res.data)
+}
+
+

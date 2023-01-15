@@ -1,20 +1,38 @@
-import { getCounter } from "../funcs/axios";
-import React, { Component } from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import Card from "./templates/Card"
 import './Dashboard.css'
-import Card from './templates/Card'
+
+const baseUrl = 'http://localhost:3000'
+
+function Dashboard({ reload }) {
+    const [cards, setCards] = useState([])
+
+    useEffect(() => {
+        async function getCards() {
+
+            const res = await axios.get(`${baseUrl}/pures`);
+            const cards = res.data
+            setCards(cards)
+        }
+        getCards()
+    }, [reload]);
+
+    useEffect(() => {
+        console.log(reload)
+    }, [reload])
 
 
-const url = 'http://localhost:3000/counter/'
 
-function Dashboard({ counter }) {
+    function renderCards(id, title, value) {
+        return <Card key={id} title={title} value={value} color="#133677" />
+    }
 
     return (
         <div className="dashboard-row">
-            <Card title="Actions" value={counter.actions} color="#133677" />
-            <Card title="Types" value={counter.types} color="#133677" />
-            <Card title="Created" value={counter.created} color="#133677" />
+            {cards.map((card) => renderCards(card.id, card.title, card.list.length))
+
+            }
         </div>
     )
 }

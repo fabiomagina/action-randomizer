@@ -4,22 +4,27 @@
     display: flex;
     flex-direction: column;
     margin: 10px 0px;
+    height: 100vh;
+    flex-grow: 1;
     
 }
 
 .card .title {
-    font-size: 1.9rem;
+    font-size: 1.2rem;
     padding: 5px 0px;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .card .content {
-    font-size: 4rem;
+    font-size: 2rem;
     display: flex;
-    flex-grow: 1;
+    flex-grow: 3;
     background-color: #06132c;
     color: rgb(255, 255, 255);
-    padding: 40px 80px;
+    padding: 5px 80px;
     justify-content: center;
+    align-items: center;
 }

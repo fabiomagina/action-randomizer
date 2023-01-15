@@ -4,7 +4,7 @@ import './Footer.css'
 function Footer() {
     return (
     <div className="footer">
-        Desenvolvido por FMF © 2022. Todos os direitos reservados.
+        Desenvolvido por FMF © 2022.
     </div>
     )
 }

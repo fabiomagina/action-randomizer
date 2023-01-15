@@ -14,15 +14,12 @@ function Menu(props) {
                 <li>
                     <Link onClick={props.dashboardHandler} >Dashboard</Link>
                 </li>
-                
+
                 <li>
                     <Link onClick={props.addHandler} to="/">Insert Actions</Link>
                 </li>
                 <li>
                     <Link to="/generate_action">Generate Action</Link>
-                </li>
-                <li>
-                    <Link to="/results">Generate Macro</Link>
                 </li>
                 <li>
                     <Link to="/macro_config">Macro Config</Link>

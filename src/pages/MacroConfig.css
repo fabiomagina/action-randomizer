@@ -34,7 +34,7 @@
     font-size: 1.1rem;
     color: rgb(23, 23, 23);
     max-width: 300px;
-    text-align: end;
+    text-align: start;
 }
 
 .config__template .row__button {
@@ -101,4 +101,6 @@
     color: rgba(243, 243, 243, 0.71);
     outline: none;
     border: none;
+    padding: 9px;
+    font-size: 1rem;
 }

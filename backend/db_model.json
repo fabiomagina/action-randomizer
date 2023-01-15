@@ -2,19 +2,24 @@
   "pures": [
     {
       "id": 1,
+      "title": "Macro 1",
       "list": []
-      },
-      
+    },
     {
       "id": 2,
+      "title": "Macro 2",
       "list": []
-      },
-      
+    },
     {
       "id": 3,
+      "title": "Macro 3",
       "list": []
-      } 
-      
+    },
+    {
+      "id": 4,
+      "title": "Macro 4",
+      "list": []
+    }
   ],
   "generated": [],
   "counter": {

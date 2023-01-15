@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import "./GenerateAction.css"
-import PageView from "../components/common/PageView";
-import { showResults } from "../funcs/axios";
+import PageView from "../components/templates/PageView";
+import  generateAction  from "../funcs/generateAction";
 
 export default function GenerateAction({ setCounter }) {
     const [numberOfActions, setNumberOfActions] = useState(0)
-    const [actions, setActions] = useState('')
+    const [actions, setActions] = useState([])
 
     function reloadCounter(newCounter) {
         setCounter(newCounter)
     }
 
     function renderResults(results) {
-        setActions(results[0].action)
+        setActions(results)
+        
     }
     function clear() {
         setNumberOfActions(0)
@@ -29,18 +30,19 @@ export default function GenerateAction({ setCounter }) {
                             <input className="n-input" name="numberOfActions" type="number" value={numberOfActions}
                                 onChange={e => setNumberOfActions(e.target.value)} />
                         </div>
-                        <div className="row">
-                            <label>Results: </label>
-                            <textarea cols="45" rows="20" id="results" name="action" type="text" value={actions}
-                                onChange={e => setActions(e)} />
-                        </div>
-                        <div className="button__row">
+                      
+                        <div className="btn__row">
+                            
                             <button className="btn btn__clear" onClick={
                                 () => clear()}>
-                                clear</button>
-                            <button className="btn " onClick={
-                                () => showResults(renderResults)}>
+                                clean generated actions</button>
+                            <button className="btn btn__generate" onClick={
+                                () => generateAction(renderResults)}>
                                 Generate Actions</button>
+                        </div>
+                        <div className="result__row">
+                            <textarea cols="50" rows="13" id="results" name="action" type="text" value={actions}
+                                onChange={e => setActions(e)} />
                         </div>
                     </div>
                 </div>
