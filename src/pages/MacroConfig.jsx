@@ -20,19 +20,17 @@ export default function MacroConfig(props) {
                 <div className="config__view">
                     <div className="config__template">
                         <div className="row ">
-                            <label>Macro Config<p>Envie uma mensagem ao Admnistrador para mais informações.</p> </label>
+                            <label>Macro Config<p></p> </label>
 
                         </div>
                         <div className="row row__setconfig ">
-                            <textarea cols="35" rows="5" name="mensagem" type="text" value={msg}
-                                onChange={(e) => setMsg(e.target.value)} />
+                            <textarea cols="35" rows="5" name="mensagem" type="text" value='Envie uma mensagem ao Administrador para mais informações.'
+                                 />
                         </div>
                         <div className="row__button">
-                        <button className="btn btn__clear" onClick={
-                            () => clear()}>
-                            Clear</button>
+                        
                         <button className="btn btn__save" onClick={
-                            () => clear()}>
+                            () => window.open("mailto:fabiomagina@gmail.com")}>
                             Send</button>
                     </div>
                     </div>
