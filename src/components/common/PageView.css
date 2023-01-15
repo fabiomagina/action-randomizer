@@ -18,3 +18,13 @@
     flex-direction: column;
     justify-self: flex-end;
 }
+
+.container {
+    background-color: rgb(73, 71, 76);
+    grid-area: main;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+

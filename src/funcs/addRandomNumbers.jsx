@@ -1,5 +1,6 @@
 
 export const addRandomNumbers = (array) => {
+
     let novo_array = ""
     for (let i = 0; i < array.length; i++) {
         if (array[i]) {
@@ -10,5 +11,5 @@ export const addRandomNumbers = (array) => {
             novo_array += (',')
         }
     }
-    console.log(novo_array) 
+    
 }

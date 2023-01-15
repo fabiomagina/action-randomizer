@@ -1,0 +1,112 @@
+.pageview {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.pageview .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+}
+
+.dashboard-view {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+}
+
+.pageview {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.pageview .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3%;
+    flex-wrap: wrap;
+}
+
+.dashboard-view {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+}
+
+.results__template {
+    background-color: #9e9e9e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px 10px 20px;
+    border-radius: 3px;
+}
+
+.results__template textarea {
+    background-color: rgb(16, 15, 17);
+    color: rgb(159, 158, 158);
+    outline: none;
+    border: none;
+}
+
+.results__template .btn {
+    font-size: 1.7rem;
+    padding: 5px 25px;
+    margin-bottom: 6px;
+    background-color: white;
+    color: rgb(31, 26, 26);
+    border-radius: 9px;
+    align-self: flex-end;
+}
+
+.results__template .btn__clear {
+    font-size: 1rem;
+    background-color: #b3b3b3;
+    padding: 4px 20px;
+    margin-right: 6px;
+}
+
+.results__template .btn__generate {
+    font-size: 1.2rem;
+    background-color: #2e0524;
+    color: rgb(225, 225, 225);
+}
+
+.results__template .button__row {
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.results__template .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px;
+    border-radius: 39px;
+    gap: 20px
+}
+
+.results__template label {
+    font-size: 1.9rem;
+    flex: 1;
+    color: black;
+    margin-bottom: 6px;
+}
+
+.n-input {
+    width: 48px
+}
+
+.results__template input {
+    font-size: 1.3rem
+}

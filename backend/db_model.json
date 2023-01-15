@@ -2,19 +2,19 @@
   "pures": [
     {
       "id": 1,
-      "nome": "modelo 1",
       "list": []
-    },
+      },
+      
     {
       "id": 2,
-      "nome":"modelo 2",
       "list": []
-    },
+      },
+      
     {
       "id": 3,
-      "nome": "modelo 3",
       "list": []
-    }
+      } 
+      
   ],
   "generated": [],
   "counter": {

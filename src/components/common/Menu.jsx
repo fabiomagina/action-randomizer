@@ -1,5 +1,5 @@
 import React from "react";
-import Cube from "./Cube"
+import Cube from "../templates/Cube"
 import { Link } from 'react-router-dom'
 import './Menu.css'
 
@@ -7,23 +7,25 @@ function Menu(props) {
     return (
         <aside className="menu">
             <div className="logo">
-                <Cube />ActionRandomizer
+                <Cube />
+                <h1 className="title">RANDOMIZER</h1>
             </div>
             <ul>
                 <li>
-                    <Link onClick={props.dashboardHandler} to="/">Dashboard</Link>
+                    <Link onClick={props.dashboardHandler} >Dashboard</Link>
+                </li>
+                
+                <li>
+                    <Link onClick={props.addHandler} to="/">Insert Actions</Link>
                 </li>
                 <li>
-                    <Link onClick={props.addHandler}>Generate Macro</Link>
+                    <Link to="/generate_action">Generate Action</Link>
                 </li>
                 <li>
-                    <Link onClick={props.generatorHandler}>Add Actions</Link>
+                    <Link to="/results">Generate Macro</Link>
                 </li>
                 <li>
-                    <Link>Macro Config</Link>
-                </li>
-                <li>
-                    <Link>Show Results</Link>
+                    <Link to="/macro_config">Macro Config</Link>
                 </li>
             </ul>
         </aside>
