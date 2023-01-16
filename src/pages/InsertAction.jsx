@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import "./InsertAction.css"
 import { sendAction } from "../funcs/axios";
 import PageView from "../components/templates/PageView";
+import { useEffect } from "react";
 
 
 export default function InsertAction(props) {
     const [actionIndex, setActionIndex] = useState(0)
     const [action, setAction] = useState('')
     const [counter, setCounter] = useState(0)
+
+    useEffect(() => {
+    }
+    ,[actionIndex])
 
     function reloadCounter(newCounter) {
         setCounter(newCounter)
