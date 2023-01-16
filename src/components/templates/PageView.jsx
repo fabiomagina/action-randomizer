@@ -38,8 +38,9 @@ const PageView = (props) => {
                 </div>
 
             </div>
-
-            <Menu dashboardHandler={() => handler(setDashboard)} />
+            <div className="view__menu">
+                <Menu dashboardHandler={() => handler(setDashboard)} />
+            </div>
         </>
     )
 }

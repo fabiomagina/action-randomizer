@@ -60,13 +60,18 @@
 }
 
 
-.results__template .row {
+.pageview .results__template .row {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    margin: 15px;
+    padding: 6px;
     border-radius: 39px;
-    gap: 20px
+    gap: 9px
+}
+
+
+.results__template .row__number-actions {
+    margin: 20px;
+    width: 80%;
 }
 
 .results__template label {
@@ -87,13 +92,44 @@
     font-size: 2rem;
 }
 
-.result__row {
+.results__template .result__row {
     margin-bottom: 6px;
     color: rgb(18, 104, 18);
     font-size: 1.1rem;
     
 }
 
-.btn__row {
-    margin-bottom: 12px;
+.results__template .row__save {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 3px;
+    
+
 }
+
+.row__label--input {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 20px;
+    text-align: end;
+    
+}
+
+.row__label--input label {
+    font-size: 1.6rem;
+}
+
+.results__template .btn__save {
+    background-color: rgb(3, 40, 3);
+    color: rgb(231, 231, 231);
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.results__template .btn__row {
+    margin-bottom: 12px;
+    width: 100%;
+}
+

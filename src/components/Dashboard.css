@@ -6,3 +6,12 @@
     margin-right: 4%;
     max-height: 95vh;
 }
+
+@media screen and (max-width: 641px) {
+    .dashboard-view {
+        position: absolute;
+        right: -9999px;
+    }
+
+
+}
