@@ -5,15 +5,7 @@ import { useEffect } from "react";
 
 
 export default function MacroConfig(props) {
-    let [msg, setMsg] = useState('')
-
-    useEffect(() => {
-        console.log(msg)
-    },[msg])
-    function clear() {
-        setMsg('')
-    }
-
+    
     return (
         <PageView title={'ACTIONS'} >
             <div className="pageview row">

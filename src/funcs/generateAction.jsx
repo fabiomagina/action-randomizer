@@ -11,7 +11,7 @@ export default async function generateMacro(callback) {
 function selectActionsFromIdArray(actions, idArray = [0]) {
     let newMacro = ''
     idArray.forEach(idArray => {
-        
+        //adiciona um item da lista de cada tipo
         newMacro += getRandomItem(actions[idArray].list)
     })
     return runRandomizer(newMacro)
