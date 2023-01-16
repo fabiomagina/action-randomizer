@@ -3,9 +3,9 @@ import './Footer.css'
 
 function Footer() {
     return (
-    <div className="footer">
+    <footer className="footer">
         Desenvolvido por FMF © 2022.
-    </div>
+    </footer>
     )
 }
 

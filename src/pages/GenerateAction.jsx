@@ -24,41 +24,36 @@ export default function GenerateAction() {
     }
 
     return (
-        <PageView reload={counter}>
-            <div className="pageview row">
-                <div className="results-view">
-                    <div className="results__template">
-                        <div className="row row__number-actions">
-                            <label>Number of Actions:</label>
-                            <input className="n-input" name="numberOfActions" type="number" value={numberOfActions}
-                                onChange={e => setNumberOfActions(e.target.value)} />
-                        </div>
+        <PageView reload={counter} title="GENERATE ACTION">
 
-                        <div className="btn__row">
+            <div className="row row__number-actions">
+                <label>Number of Actions:</label>
+                <input className="n-input" name="numberOfActions" type="number" value={numberOfActions}
+                    onChange={e => setNumberOfActions(e.target.value)} />
+            </div>
 
-                            <button className="btn btn__clear" onClick={
-                                () => clear()}>
-                                clear generated actions</button>
-                            <button className="btn btn__generate" onClick={
-                                () => generateAction(renderResults)}>
-                                Generate Actions</button>
-                        </div>
-                        <div className="result__row">
-                            <textarea cols="50" rows="13" id="results" name="action" type="text" value={actions}
-                                onChange={e => setActions(e)} />
-                        </div>
-                        <div className="row row__save">
-                            <div className="row__label--input">
-                                <label>Save type:</label>
-                            <input className="n-input" name="saveType" type="number" value={saveType}
-                                onChange={e => setSaveType(e.target.value)} />
-                                </div>
-                            <button className="btn btn__save" onClick={
-                                () => sendAction(saveType, actions, clear, reloadCounter)}>
-                                Save</button>
-                        </div>
-                    </div>
+            <div className="btn__row">
+
+                <button className="btn btn__clear" onClick={
+                    () => clear()}>
+                    clear generated actions</button>
+                <button className="btn btn__generate" onClick={
+                    () => generateAction(renderResults)}>
+                    Generate Actions</button>
+            </div>
+            <div className="result__row">
+                <textarea cols="50" rows="13" id="results" name="action" type="text" value={actions}
+                    onChange={e => setActions(e)} />
+            </div>
+            <div className="row row__save">
+                <div className="row__label--input">
+                    <label>Save type:</label>
+                    <input className="n-input" name="saveType" type="number" value={saveType}
+                        onChange={e => setSaveType(e.target.value)} />
                 </div>
+                <button className="btn btn__save" onClick={
+                    () => sendAction(saveType, actions, clear, reloadCounter)}>
+                    Save</button>
             </div>
         </PageView>
     )

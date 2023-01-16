@@ -1,4 +1,4 @@
-div.footer {
+.footer {
     grid-area: footer;
     background-color: black;
     color: rgb(162, 162, 162);
@@ -6,4 +6,5 @@ div.footer {
     justify-content: flex-end;
     align-items: center;
     padding-right: 20px;
+    height: 100%;;
 }

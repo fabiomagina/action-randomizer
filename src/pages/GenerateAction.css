@@ -5,13 +5,13 @@
     width: 100%;
 }
 
-.pageview .row {
+.generate__template .row {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
     flex-wrap: wrap;
 }
+
 
 .dashboard-view {
     display: flex;
@@ -19,24 +19,20 @@
     justify-self: flex-end;
 }
 
-.results__template {
-    background-color: #9e9e9e;
+.generate__template {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 20px 10px 20px;
-    border-radius: 3px;
+align-items: center;
 }
 
-.results__template textarea {
+.generate__template textarea {
     background-color: rgb(16, 15, 17);
     color: rgb(159, 158, 158);
     outline: none;
     border: none;
 }
 
-.results__template .btn {
+.generate__template .btn {
     font-size: 1.7rem;
     padding: 5px 25px;
     margin-bottom: 6px;
@@ -46,21 +42,21 @@
     align-self: flex-end;
 }
 
-.results__template .btn__clear {
+.generate__template .btn__clear {
     font-size: 1rem;
     background-color: #b3b3b3;
     padding: 4px 20px;
     margin-right: 6px;
 }
 
-.results__template .btn__generate {
+.generate__template .btn__generate {
     font-size: 1.2rem;
     background-color: #2e0524;
     color: rgb(225, 225, 225);
 }
 
 
-.pageview .results__template .row {
+.pageview .generate__template .row {
     display: flex;
     align-items: center;
     padding: 6px;
@@ -69,12 +65,12 @@
 }
 
 
-.results__template .row__number-actions {
+.generate__template .row__number-actions {
     margin: 20px;
     width: 80%;
 }
 
-.results__template label {
+.generate__template label {
     font-size: 1.9rem;
     flex: 1;
     color: black;
@@ -85,21 +81,22 @@
     width: 48px
 }
 
-.results__template input {
+.generate__template input {
     font-size: 1.3rem
 }
 .btn {
     font-size: 2rem;
 }
 
-.results__template .result__row {
+.generate__template .result__row {
     margin-bottom: 6px;
     color: rgb(18, 104, 18);
     font-size: 1.1rem;
     
+    
 }
 
-.results__template .row__save {
+.generate__template .row__save {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -121,14 +118,14 @@
     font-size: 1.6rem;
 }
 
-.results__template .btn__save {
+.generate__template .btn__save {
     background-color: rgb(3, 40, 3);
     color: rgb(231, 231, 231);
     font-size: 1.2rem;
     margin-bottom: 6px;
 }
 
-.results__template .btn__row {
+.generate__template .btn__row {
     margin-bottom: 12px;
     width: 100%;
 }

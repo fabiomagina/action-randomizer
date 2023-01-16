@@ -12,7 +12,7 @@ export default function InsertAction(props) {
 
     useEffect(() => {
     }
-    ,[actionIndex])
+        , [actionIndex])
 
     function reloadCounter(newCounter) {
         setCounter(newCounter)
@@ -34,31 +34,29 @@ export default function InsertAction(props) {
     }
 
     return (
-        <PageView title={'ACTIONS'} reload={counter}>
-            <div className="pageview row">
-                <div className="add-view">
-                    <div className="insert__template">
-                        <div className="row type__row">
-                            <label>Type:</label>
-                            <input className="n-input" name="number" type="number" value={actionIndex}
-                                onChange={e => updateActionIndex(e)} />
-                        </div>
-                        <div className="row">
-                            <label>Script: </label>
-                            <textarea cols="35" rows="6" id="action" name="action" type="text" value={action}
-                                onChange={e => updateAction(e)} />
-                        </div>
-                        <div className="btn__row">
-                            <button className="run-btn" onClick={
-                                () => sendAction(actionIndex, action, clear, reloadCounter)}>
-                                Add</button>
-                        </div>
+        <PageView title={'Insert Actions'} reload={counter}>
 
+            <div className="insert_template">
+                <div className="row row__type">
+                    <label>Type:</label>
+                    <input className="n-input" name="number" type="number" value={actionIndex}
+                        onChange={e => updateActionIndex(e)} />
+                </div>
+                <div className="row__script">
+                    <label>Script: </label>
+                    <textarea cols="35" rows="12" id="action" name="action" type="text" value={action}
+                        onChange={e => updateAction(e)} />
+                </div>
+                <div className="row__btn">
+                    <button className="run-btn" onClick={
+                        () => clear()}>
+                        clear</button>
+                    <button className="run-btn" onClick={
+                        () => sendAction(actionIndex, action, clearAction, reloadCounter)}>
+                        Add</button>
 
-                    </div>
                 </div>
             </div>
-
         </PageView>
     )
 }

@@ -38,11 +38,6 @@ ul, li,a  {
 }
 
 
-.menu {
-    grid-area: menu
-    
-}
-
 .menu a {
     color: rgb(116, 201, 244);
     cursor: pointer;

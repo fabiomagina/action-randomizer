@@ -1,31 +1,107 @@
-.pageview  {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+.container {
+    background-color: rgb(73, 71, 76);
+    display: grid;
+    grid-template-columns: 16% 1fr 16%;
+    grid-template-rows: 1fr 4vh;
+    grid-template-areas: 
+    "menu main dashboard"
+    "footer footer footer";
+    width: 100vw;
+    min-height: 100vh;
 }
 
-.pageview .row {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 3%;
-    flex-wrap: wrap;
+.view__footer {
+    grid-area: footer;
+    margin: 0;
+    max-height: 40px;
+}
+
+.view__menu {
+    grid-area: menu;
 }
 
 .dashboard-view {
-    display: flex;
-    flex-direction: column;
-    justify-self: flex-end;
+    grid-area: dashboard
 }
 
-.container {
-    background-color: rgb(73, 71, 76);
+.container__main {
     grid-area: main;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    
+}
+.template__main {
+    background-color: #9e9e9e;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    height: auto;
+    width: 300px;
+    justify-self: center;
+    height: auto;
+}
+
+.template__main .run-btn {
+    font-size: 1.7rem;
+    padding: 5px 25px;
+    margin: 3px 0px 3px 0px;
+    background-color: white;
+    color: rgb(31, 26, 26);
+    border-radius: 9px;
+    align-self: flex-end;
+    margin-right: 6px;
+    margin-bottom: 10px;
+}
+
+.template__main .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px;
+    border-radius: 39px;
+    gap: 0px;
+}
+
+.template__main label {
+    font-size: 1.8rem;
+    flex: 1;
+    color: black;
+    margin: 12px 0px;
+    line-height: 80%;
+}
+
+
+.template__main .row__type {
+    background-color: rgba(0, 255, 255, 0);
+    width: 170px;
+    margin-top: 30px;
+}
+
+.n-input {
+    width: 48px;
+    margin-right: 10px;
+}
+
+.template__main input {
+    font-size: 1.3rem
+}
+
+.template__main textarea {
+    background-color: rgb(35, 25, 39);
+    color: rgba(243, 243, 243, 0.71);
+    outline: none;
+    border: none;
+    max-width: 280px;
+}
+
+.template__main .row__btn {
+    display: flex;
     width: 100%;
+    justify-content: flex-end;
 }
 
 @media screen and (max-width: 641px) {
