@@ -42,7 +42,7 @@ export default function GenerateAction() {
                         () => generateAction(renderResults)}>
                         Generate Actions</button>
                 </div>
-                <div className="result__row">
+                <div className="row__textarea">
                     <textarea cols="50" rows="13" id="results" name="action" type="text" value={actions}
                         onChange={e => setActions(e)} />
                 </div>

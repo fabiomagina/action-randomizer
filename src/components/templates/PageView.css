@@ -85,6 +85,13 @@
     font-size: 1.3rem
 }
 
+.template__main .row__textarea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 6px 0;
+
+}
 .template__main textarea {
     background-color: rgb(35, 25, 39);
     color: rgba(243, 243, 243, 0.71);
@@ -93,6 +100,7 @@
     max-width: 280px;
     align-self: center;
 }
+
 
 .template__main .row__btn {
     display: flex;

@@ -15,7 +15,7 @@ export default function MacroConfig(props) {
                     <textarea cols="35" rows="5" name="mensagem" type="text" value='Envie uma mensagem ao Administrador para mais informações.'
                     />
                 </div>
-                <div className="row__button">
+                <div className="row__btn">
 
                     <button className="btn btn__save" onClick={
                         () => window.open("mailto:fabiomagina@gmail.com")}>

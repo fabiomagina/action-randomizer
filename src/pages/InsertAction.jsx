@@ -42,7 +42,7 @@ export default function InsertAction(props) {
                     <input className="n-input" name="number" type="number" value={actionIndex}
                         onChange={e => updateActionIndex(e)} />
                 </div>
-                <div className="row__script">
+                <div className="row__textarea">
                     <label>Script: </label>
                     <textarea cols="50" rows="13" id="action" name="action" type="text" value={action}
                         onChange={e => updateAction(e)} />
@@ -53,7 +53,7 @@ export default function InsertAction(props) {
                         clear</button>
                     <button className="btn btn__save" onClick={
                         () => sendAction(actionIndex, action, clearAction, reloadCounter)}>
-                        Add</button>
+                        Send</button>
 
                 </div>
             </div>
