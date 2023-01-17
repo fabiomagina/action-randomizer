@@ -59,11 +59,7 @@
     padding: 4px 20px;
     margin-right: 6px;
 }
-.config__template .btn__save {
-    font-size: 1.2rem;
-    background-color: #020a03;
-    color: rgb(218, 218, 218);
-}
+
 
 .config__template .row {
     display: flex;
