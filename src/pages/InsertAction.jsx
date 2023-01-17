@@ -34,7 +34,7 @@ export default function InsertAction(props) {
     }
 
     return (
-        <PageView title={'INSERT ACTION'} reload={counter}>
+        <PageView title={'INSERT ACTIONS'} reload={counter}>
 
             <div className="insert__template">
                 <div className="row row__type">

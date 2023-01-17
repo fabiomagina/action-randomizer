@@ -8,7 +8,7 @@ const PageView = (props) => {
     const [dashboard, setDashboard] = useState(true)
 
     useEffect(function () {
-        const dashboardview = document.querySelector('.dashboard-view')
+        const dashboardview = document.querySelector('.view__dashboard')
         if (dashboard) {
             dashboardview.style.display = 'flex'
         } else {
@@ -29,7 +29,7 @@ const PageView = (props) => {
                     {props.children}
                 </div>
             </div>
-            <div className="dashboard-view">
+            <div className="view__dashboard">
                 <Dashboard reload={props.reload} />
             </div>
             <div className="view__menu">

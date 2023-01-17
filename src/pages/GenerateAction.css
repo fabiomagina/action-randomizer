@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 105%;
 }
 
 .template__main .generate__template .btn__clear {
@@ -13,12 +14,13 @@
 .template__main .generate__template .btn__generate {
     font-size: 1.1rem;
     background-color: #2e0524;
-    color: rgb(225, 225, 225);
+    color: rgb(228, 228, 228);
 }
 
 
 .template__main .generate__template .row__number-of-actions {
     margin-bottom: 6px;
+    gap: 10px;
 }
 
 

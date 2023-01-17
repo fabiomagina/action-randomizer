@@ -24,7 +24,7 @@ export default function GenerateAction() {
     }
 
     return (
-        <PageView reload={counter} title="GENERATE ACTION">
+        <PageView reload={counter} title="GENERATE ACTIONS">
 
             <div className="generate__template">
 
