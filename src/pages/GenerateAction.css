@@ -29,11 +29,10 @@
     color: rgb(18, 104, 18);
 }
 
-.template__main .row__save {
+.template__main .generate__template .row__save {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    width: 90%;
+    align-items: center;
+    width: 300px;
     margin-top: 3px;
     gap: 6px;
 }

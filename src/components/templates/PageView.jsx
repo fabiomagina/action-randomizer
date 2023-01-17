@@ -22,7 +22,7 @@ const PageView = (props) => {
     }
 
     return (
-        <div className="container">
+        <div className="view__main">
             <div className="container__main">
                 <div className="template__main">
                     <h1 className="title">{props.title}</h1>

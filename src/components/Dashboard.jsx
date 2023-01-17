@@ -18,10 +18,6 @@ function Dashboard({ reload }) {
         getCards()
     }, [reload]);
 
-    useEffect(() => {
-        console.log(reload)
-    }, [reload])
-
 
 
     function renderCards(id, title, value) {

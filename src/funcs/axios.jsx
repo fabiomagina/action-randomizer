@@ -66,3 +66,16 @@ export function clearActionsDb(type, reload) {
         })
         .then(() => updateCounterDb(reload))
 }
+
+export function getTypes(setTypes) {
+
+    let url = `${baseUrl}/pures/`
+    axios.get(url)
+        .then(res => res.data)
+        .then(data => {
+            let arrayTipos = []
+            data.forEach(type => arrayTipos.push({id: type.id, title:type.title}))
+            return arrayTipos
+        })
+        .then(res => setTypes(res))
+    }

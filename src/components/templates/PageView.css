@@ -1,4 +1,4 @@
-.container {
+.view__main {
     background-color: rgb(73, 71, 76);
     display: grid;
     grid-template-columns: 16% 2fr 13%;
@@ -72,6 +72,7 @@
     border-radius: 9px;
     align-self: center;
     gap: 10px;
+    border: none;
 }
 
 .template__main .row {
@@ -81,6 +82,7 @@
     margin: 0px;
     border-radius: 39px;
     gap: 0px;
+    
 }
 
 .template__main label {
@@ -92,6 +94,7 @@
 
 .template__main .n-input {
     width: 48px;
+    outline: none;
 }
 
 .template__main input {
