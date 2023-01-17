@@ -45,16 +45,20 @@
     height: auto;
 }
 
-.template__main .run-btn {
-    font-size: 1.7rem;
+.template__main .title {
+    width: 50%;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.template__main .btn {
+    font-size: 1.1rem;
     padding: 5px 25px;
-    margin: 3px 0px 3px 0px;
     background-color: white;
     color: rgb(31, 26, 26);
     border-radius: 9px;
-    align-self: flex-end;
-    margin-right: 6px;
-    margin-bottom: 10px;
+    align-self: center;
+    gap: 10px;
 }
 
 .template__main .row {
@@ -68,20 +72,11 @@
 
 .template__main label {
     font-size: 1.8rem;
-    flex: 1;
     color: black;
     margin: 12px 0px;
     line-height: 80%;
 }
-
-
-.template__main .row__type {
-    background-color: rgba(0, 255, 255, 0);
-    width: 170px;
-    margin-top: 30px;
-}
-
-.n-input {
+.template__main .n-input {
     width: 48px;
     margin-right: 10px;
 }
@@ -96,12 +91,22 @@
     outline: none;
     border: none;
     max-width: 280px;
+    align-self: center;
 }
 
 .template__main .row__btn {
     display: flex;
     width: 100%;
     justify-content: flex-end;
+    align-items: center;
+    margin-top: 6px;
+    gap: 6px;
+}
+
+.template__main .btn__save {
+    font-size: 1.2rem;
+    background-color: #020a03;
+    color: rgb(228, 228, 228);
 }
 
 @media screen and (max-width: 641px) {

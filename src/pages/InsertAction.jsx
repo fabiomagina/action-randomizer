@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 
 export default function InsertAction(props) {
-    const [actionIndex, setActionIndex] = useState(0)
+    const [actionIndex, setActionIndex] = useState(1)
     const [action, setAction] = useState('')
     const [counter, setCounter] = useState(0)
 
@@ -34,24 +34,24 @@ export default function InsertAction(props) {
     }
 
     return (
-        <PageView title={'Insert Actions'} reload={counter}>
+        <PageView title={'INSERT ACTION'} reload={counter}>
 
-            <div className="insert_template">
+            <div className="insert__template">
                 <div className="row row__type">
-                    <label>Type:</label>
+                    <label>Action Type:</label>
                     <input className="n-input" name="number" type="number" value={actionIndex}
                         onChange={e => updateActionIndex(e)} />
                 </div>
                 <div className="row__script">
                     <label>Script: </label>
-                    <textarea cols="35" rows="12" id="action" name="action" type="text" value={action}
+                    <textarea cols="50" rows="13" id="action" name="action" type="text" value={action}
                         onChange={e => updateAction(e)} />
                 </div>
                 <div className="row__btn">
-                    <button className="run-btn" onClick={
+                    <button className="btn btn__clear" onClick={
                         () => clear()}>
                         clear</button>
-                    <button className="run-btn" onClick={
+                    <button className="btn btn__save" onClick={
                         () => sendAction(actionIndex, action, clearAction, reloadCounter)}>
                         Add</button>
 

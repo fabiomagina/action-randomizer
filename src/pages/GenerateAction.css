@@ -1,132 +1,44 @@
-.pageview {
+.template__main .generate__template {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-}
-
-.generate__template .row {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
 }
 
-
-.dashboard-view {
-    display: flex;
-    flex-direction: column;
-    justify-self: flex-end;
-}
-
-.generate__template {
-    display: flex;
-    flex-direction: column;
-align-items: center;
-}
-
-.generate__template textarea {
-    background-color: rgb(16, 15, 17);
-    color: rgb(159, 158, 158);
-    outline: none;
-    border: none;
-}
-
-.generate__template .btn {
-    font-size: 1.7rem;
-    padding: 5px 25px;
-    margin-bottom: 6px;
-    background-color: white;
-    color: rgb(31, 26, 26);
-    border-radius: 9px;
-    align-self: flex-end;
-}
-
-.generate__template .btn__clear {
-    font-size: 1rem;
+.template__main .generate__template .btn__clear {
+    font-size: 0.9rem;
     background-color: #b3b3b3;
     padding: 4px 20px;
-    margin-right: 6px;
 }
 
-.generate__template .btn__generate {
-    font-size: 1.2rem;
+.template__main .generate__template .btn__generate {
+    font-size: 1.1rem;
     background-color: #2e0524;
     color: rgb(225, 225, 225);
 }
 
 
-.pageview .generate__template .row {
-    display: flex;
-    align-items: center;
-    padding: 6px;
-    border-radius: 39px;
-    gap: 9px
-}
-
-
-.generate__template .row__number-actions {
-    margin: 20px;
-    width: 80%;
-}
-
-.generate__template label {
-    font-size: 1.9rem;
-    flex: 1;
-    color: black;
+.template__main .generate__template .row__number-of-actions {
     margin-bottom: 6px;
 }
 
-.n-input {
-    width: 48px
-}
 
-.generate__template input {
-    font-size: 1.3rem
-}
-.btn {
-    font-size: 2rem;
-}
-
-.generate__template .result__row {
-    margin-bottom: 6px;
+.template__main .generate__template .result__row {
+    margin: 6px 0px;
     color: rgb(18, 104, 18);
-    font-size: 1.1rem;
-    
-    
 }
 
-.generate__template .row__save {
+.template__main .row__save {
     display: flex;
-    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
     width: 90%;
     margin-top: 3px;
-    
-
+    gap: 6px;
 }
 
-.row__label--input {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    gap: 20px;
+.template__main .row__save label {
+    flex-grow: 1;
+    font-size: 1.4rem;
     text-align: end;
-    
+    margin: 0;
 }
-
-.row__label--input label {
-    font-size: 1.6rem;
-}
-
-.generate__template .btn__save {
-    background-color: rgb(3, 40, 3);
-    color: rgb(231, 231, 231);
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-}
-
-.generate__template .btn__row {
-    margin-bottom: 12px;
-    width: 100%;
-}
-

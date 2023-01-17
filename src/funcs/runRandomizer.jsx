@@ -1,6 +1,3 @@
-import { postGenerated } from "./axios"
-import getRandomItem from "./getRandomItem"
-import axios from 'axios'
 
 const baseUrl = 'http://localhost:3000'
 
@@ -18,8 +15,6 @@ function addRandom(number) {
 function newAction(pureAction) {
     let newAction = ''
     let splittedOld = pureAction.split('\n')
-    console.log(splittedOld)
-    let newActionArray = ''
     splittedOld.map((actionLine, i) => {
         let oldNumbersLineArray = actionLine.match(/(\d+)/g)
         if (oldNumbersLineArray) {

@@ -8,60 +8,23 @@
     width: 300px;
 }
 
-.insert__template .run-btn {
-    font-size: 1.7rem;
-    padding: 5px 25px;
-    margin: 3px 0px 3px 0px;
-    background-color: white;
-    color: rgb(31, 26, 26);
-    border-radius: 9px;
-    align-self: flex-end;
-    margin-right: 6px;
-    margin-bottom: 10px;
-}
-
-.insert__template .row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0px;
-    border-radius: 39px;
-    gap: 0px;
-}
-
-.row__script {
+.insert__template .row__script {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
-
-.insert__template label {
-    font-size: 1.8rem;
-    flex: 1;
-    color: black;
-    margin: 12px 0px;
-    line-height: 80%;
-}
-
 
 .insert__template .row__type {
     background-color: rgba(0, 255, 255, 0);
-    width: 170px;
-    margin-top: 30px;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 20px;
 }
 
-.n-input {
-    width: 48px;
-    margin-right: 10px;
+.insert__template .row__btn {
+    margin: 12px;
 }
 
-.insert__template input {
-    font-size: 1.3rem
-}
-
-.insert__template textarea {
-    background-color: rgb(35, 25, 39);
-    color: rgba(243, 243, 243, 0.71);
-    outline: none;
-    border: none;
-    max-width: 280px;
+.insert__template .row__btn .btn__clear {
+    padding: 4px 20px;
 }

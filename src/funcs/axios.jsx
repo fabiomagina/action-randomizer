@@ -7,7 +7,7 @@ export function sendAction(type, action, callback, reload) {
     axios.get(url)
         .then(res => res.data)
         .then(data => {
-            let  list = data.list
+            let list = data.list
             list.push(action)
             axios.put(url, { id: type, title: data.title, list: list })
         })
@@ -15,10 +15,17 @@ export function sendAction(type, action, callback, reload) {
         .then(() => callback())
 }
 
-export function postGenerated(obj, reload) {
-    let url = `${baseUrl}/generated/`
-    axios.post(url, obj)
-        .then(() => updateCounterDb(reload, 'created'))
+export function postGenerated(reload, action, type, clearCallback,) {
+    let url = `${baseUrl}/pures/${type}`
+    axios.get(url)
+        .then(res => res.data)
+        .then(data => {
+            let list = data.list
+            list.push(action)
+            axios.put(url, { id: type, title: data.title, list: list })
+        })
+        .then(() => updateCounterDb(reload))
+        .then(() => clearCallback())
 }
 
 export function updateCounterDb(reload, type = 'actions') {
@@ -26,7 +33,6 @@ export function updateCounterDb(reload, type = 'actions') {
     axios.get(url)
         .then(res => res.data)
         .then(res => {
-
             let counter = { ...res, [type]: res[type] + 1 }
             axios.put(url, counter)
             reload(counter)
@@ -50,4 +56,13 @@ export function getActions() {
         .then(res => res.data)
 }
 
-
+export function clearActionsDb(type, reload) {
+    let url = `${baseUrl}/generated/${type}`
+    axios.get(url)
+        .then(res => res.data)
+        .then(data => {
+            let list = []
+            axios.put(url, { id: type, title: data.title, list: list })
+        })
+        .then(() => updateCounterDb(reload))
+}

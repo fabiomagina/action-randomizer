@@ -7,13 +7,10 @@ import { useEffect } from "react";
 export default function MacroConfig(props) {
 
     return (
-        <PageView >
+        <PageView title="MACRO CONFIG">
 
             <div className="config__template">
-                <div className="row">
-                    <label>Macro Config</label>
-
-                </div>
+                
                 <div className="row__setconfig">
                     <textarea cols="35" rows="5" name="mensagem" type="text" value='Envie uma mensagem ao Administrador para mais informações.'
                     />
