@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import PageView from "../components/templates/PageView";
 import { getTypes } from "../funcs/axios";
 import { AiOutlineClear, AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { Link } from 'react-router-dom'
 import Modal from "../components/Modal";
 
 export default function MacroConfig() {
@@ -117,6 +118,8 @@ export default function MacroConfig() {
                     <button className="btn btn__save" onClick={
                         () => openModal('', '.modal__type--new')} >
                         New Type</button>
+                    
+                    <Link to="/generate_action"><button className="btn btn__clear">Generate Macro</button></Link>
                 </div>
             </div>
 
