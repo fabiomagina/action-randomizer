@@ -9,6 +9,15 @@
     align-items: center;
     border-radius: 3px;
 }
+.template__main .config__template .row__table-desc {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.template__main .config__template .row__table-desc p {
+    text-align: center;
+    margin: 2px
+}
     
 .template__main .config__template .table__types {
     text-align: center;
