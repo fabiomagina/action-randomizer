@@ -5,17 +5,17 @@
     width: 105%;
 }
 
-.template__main .generate__template .btn__clear {
-    font-size: 0.9rem;
-    background-color: #b3b3b3;
-    padding: 4px 20px;
-}
-
 .template__main .generate__template .btn__generate {
     font-size: 1.1rem;
-    background-color: #2e0524;
+    background-color: #180213b5;
     color: rgb(228, 228, 228);
 }
+
+.template__main .generate__template .btn__generate:active {
+    background-color: #180213c7;
+}
+
+
 
 
 .template__main .generate__template .row__number-of-actions {
@@ -36,6 +36,7 @@
     margin-top: 3px;
     gap: 6px;
 }
+
 
 .template__main .row__save label {
     flex-grow: 1;

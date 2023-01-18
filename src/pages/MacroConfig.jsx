@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
 import "./MacroConfig.css"
+import { useState, useEffect } from 'react'
 import PageView from "../components/templates/PageView";
 import { getTypes } from "../funcs/axios";
 import { AiOutlineClear, AiFillDelete, AiFillEdit } from "react-icons/ai";
+import Modal from "../components/Modal";
 
 
-
-export default function MacroConfig(props) {
+export default function MacroConfig() {
     const [types, setTypes] = useState([])
-    const [typeId, setTypeId] = useState(0)
-    const [typeTitle, setTypeTitle] = useState('')
+    const [typeId, setTypeId] = useState('')
+    const [typeTitle, setTypeTitle] = useState('?')
 
+    const modalFocus = document.querySelector('.modal--focus')
 
     useEffect(() => {
         getTypes(setTypes)
     }, [])
 
     useEffect(() => {
-        console.log(types)
     }, [types])
 
     function showStatus(status, id) {
@@ -25,48 +25,41 @@ export default function MacroConfig(props) {
         else return <p className="status--inactive">OFF</p>
     }
 
-    function editType(type) {
+    function clearType() {
+        setTypeId('?')
+        setTypeTitle('')
+    }
+
+    function deleteType(id) {
+    }
+
+    function openModal(type = '', modalStyle = '.modal__type--edit') {
+        const modal = document.querySelector(modalStyle)
+        modal.setAttribute('style', 'display: block')
+        modalFocus.setAttribute('style', 'display: block')
+        if (modalStyle === '.modal__type--new') clearType()
+        else setEditType(type)
+    }
+
+    function closeModal(modalTypeStyle) {
+        const modal = document.querySelector(`.${modalTypeStyle}`)
+        modal.setAttribute('style', 'display: none')
+        modalFocus.setAttribute('style', 'display: none')
+    }
+
+    function setEditType(type) {
         setTypeId(type.id)
         setTypeTitle(type.title)
     }
-    function clearType(id) {
-        console.log(id)
-    }
-    function deleteType(id) {
-        console.log(id)
-    }
 
-    function closeModal() {
-        const modal = document.querySelector('.modal')
-        modal.setAttribute('style', 'display: none')
+    function renderEditPage() {
+        return <Modal btnDesc="Edit" modalStyle='modal__type--edit' modalTitle={'Edit Type: '} typeId={typeId} typeTitle={typeTitle}
+            setTypeTitle={setTypeTitle} closeModal={closeModal} />
     }
 
-    function openModal() {
-        const modal = document.querySelector('.modal')
-        modal.setAttribute('style', 'display: block')
-    }
-
-    function renderEditPage(id) {
-        return (
-            <div className="modal">
-
-                <div className="row__modal--title">
-                    <h2>Editar Tipo:</h2>
-                    <button className="btn__close" onClick={() => closeModal()}>X</button>
-
-                </div>
-                <div className="row__modal--inputs">
-                    <label>Id:</label>
-                    <input type="text" className="n-input" value={typeId} readOnly />
-                    <label>Title:</label>
-                    <input type="text" onChange={(e) => setTypeTitle(e.target.value)} value={typeTitle} />
-                </div>
-                <div className="row__btn">
-                    <button className="btn btn__save">Salvar</button>
-                </div>
-
-            </div>
-        )
+    function renderNewTypePage() {
+        return <Modal btnDesc="Create" modalStyle='modal__type--new' modalTitle={'New Type: '} typeId={typeId} typeTitle={typeTitle}
+            setTypeTitle={setTypeTitle} closeModal={closeModal} newTypeModal />
     }
 
     function renderType(type) {
@@ -76,23 +69,29 @@ export default function MacroConfig(props) {
                 <td className="td__title"> {type.title}</td>
                 <td>{showStatus(type.status)}</td>
                 <td className="td__operations">
-                    <button id={type.id} onClick={(e) => {
-                        openModal(type)
-                        editType(type)
-                    }}><AiFillEdit /></button>
-                    <button id={type.id} > <AiOutlineClear /></button>
-                <button id={type.id} onClick={(e) => deleteType(type)}><AiFillDelete /></button>
-            </td>
+
+                    <button id={type.id} onClick={
+                        () => openModal(type)}>
+                        <AiFillEdit /> </button>
+                    <button id={type.id} onClick={
+                        () => openModal(type)}
+                    > <AiOutlineClear />
+                    </button>
+                    <button id={type.id} onClick={
+                        () => deleteType(type)}
+                    ><AiFillDelete /></button>
+
+                </td>
             </tr >
         )
     }
 
-
     return (
-        <PageView title="MACRO CONFIG">
 
+        <PageView title="MACRO CONFIG">
             <div className="config__template">
                 {renderEditPage()}
+                {renderNewTypePage()}
 
                 <div className="row__table">
                     <p>Selecione os tipos de macros a serem randomizados.</p>
@@ -109,13 +108,12 @@ export default function MacroConfig(props) {
                         <tbody>
                             {types.map(type => renderType(type))}
                         </tbody>
-
                     </table>
                 </div>
 
                 <div className="row__btn">
                     <button className="btn btn__save" onClick={
-                        () => window.open("mailto:fabiomagina@gmail.com")} >
+                        () => openModal('', '.modal__type--new')} >
                         New Type</button>
                 </div>
             </div>

@@ -9,73 +9,7 @@
     align-items: center;
     border-radius: 3px;
 }
-
-.template__main .config__template .modal {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(26, 13, 13);
-    width: 400px;
-    height: auto;
-    gap: 3px;
-    border-radius: 15px;
-    margin-bottom: 9%;
-    display: none;
-}
-.template__main .config__template .modal .n-input {
-    background-color: grey;
-    width: 20px;
-    text-align: center;
-}
-.template__main .config__template .modal input {
-    outline: none;
-    height: 30px;
-    width: 200px;
-}
-
-.template__main .config__template .modal .row__modal--inputs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
     
-}
-
-.template__main .config__template .modal .row__modal--inputs label {
-    color: rgb(218, 218, 218);  
-}
-
-.template__main .config__template .modal .row__modal--title {
-    padding-left: 20px;
-     border-radius: 15px;
-    background-color: rgb(150, 145, 141);
-    display: flex;
-    justify-content: space-between;
-}
-
-.template__main .config__template .modal .row__modal--title .btn__close {
-    margin: 10px;
-    margin-right: 15px;
-    background-color: #5d0505;
-    border-radius: 30px;
-    font-size: 0.8rem;
-    padding: 6px 9px;
-    color: #e2e2e2;
-    text-align: center;
-    cursor: pointer;
-    line-height: 10px;
-}
-
-.template__main .config__template .modal .row__modal--title h2 {
-    margin-bottom: 9px;
-}
-
-.template__main .config__template .modal .row__btn {
-    margin-bottom: 20px;
-    padding-right: 20px;
-    width: 95%
-}
 .template__main .config__template .table__types {
     text-align: center;
     background-color: rgb(86, 19, 19);
@@ -118,10 +52,13 @@
 .template__main .config__template .table__types .status--active {
     color: green;
     cursor: pointer;
+    padding: 0 9px;
+    background-color: rgb(18, 18, 18);
 }
 
 .template__main .config__template .table__types .status--inactive {
     color: rgb(140, 1, 1);
     background-color: rgb(18, 18, 18);
     cursor: pointer;
+    padding: 0 9px;
 }

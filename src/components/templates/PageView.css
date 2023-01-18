@@ -20,6 +20,16 @@
     grid-area: menu;
 }
 
+.modal--focus {
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(111, 111, 111, 0.703);
+    display: none;
+    z-index: 0;
+}
+
 .template__main .view__dashboard {
     grid-area: dashboard;
     display: flex;
@@ -67,7 +77,6 @@
 .template__main .btn {
     font-size: 1.1rem;
     padding: 5px 25px;
-    background-color: white;
     color: rgb(31, 26, 26);
     border-radius: 9px;
     align-self: center;
@@ -82,7 +91,7 @@
     margin: 0px;
     border-radius: 39px;
     gap: 0px;
-    
+
 }
 
 .template__main label {
@@ -129,10 +138,29 @@
     gap: 6px;
 }
 
+.template__main .generate__template .btn__clear {
+    font-size: 0.9rem;
+    background-color: #b3b3b3;
+    padding: 4px 20px;
+}
+
+.template__main .btn__clear:active {
+    background-color: #848484;
+}
+
 .template__main .btn__save {
     font-size: 1.2rem;
-    background-color: #020a03;
+    background-color: rgb(6, 30, 11);
     color: rgb(228, 228, 228);
+}
+
+.template__main .btn__save:hover {
+    background-color: rgb(10, 49, 19);
+}
+
+
+.template__main .btn__save:active {
+    background-color: rgb(7, 87, 23);
 }
 
 @media screen and (max-width: 641px) {
