@@ -10,7 +10,7 @@ const PageView = (props) => {
     useEffect(function () {
         const dashboardview = document.querySelector('.view__dashboard')
         if (dashboard) {
-            dashboardview.style.display = 'flex'
+            dashboardview.style.display = 'block'
         } else {
             dashboardview.style.display = 'none'
         }

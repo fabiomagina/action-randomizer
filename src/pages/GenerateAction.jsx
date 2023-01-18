@@ -28,7 +28,7 @@ export default function GenerateAction() {
 
             <div className="generate__template">
 
-                <div className="row row__number-of-actions">
+                <div className="row row__type">
                     <label>Number of Actions:</label>
                     <input className="n-input" name="numberOfActions" type="number" value={numberOfActions}
                         onChange={e => setNumberOfActions(e.target.value)} />
@@ -42,10 +42,12 @@ export default function GenerateAction() {
                         () => generateAction(renderResults)}>
                         Generate Actions</button>
                 </div>
+
                 <div className="row__textarea">
                     <textarea cols="50" rows="13" id="results" name="action" type="text" value={actions}
                         onChange={e => setActions(e)} />
                 </div>
+
                 <div className="row__btn row__save">
                     <label>Save type:</label>
                     <input className="n-input" name="saveType" type="number" value={saveType}

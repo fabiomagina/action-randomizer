@@ -47,7 +47,7 @@ export default function InsertAction(props) {
                     <textarea cols="50" rows="13" id="action" name="action" type="text" value={action}
                         onChange={e => updateAction(e)} />
                 </div>
-                <div className="row__btn">
+                <div className="row__btn row__save">
                     <button className="btn btn__clear" onClick={
                         () => clear()}>
                         clear</button>

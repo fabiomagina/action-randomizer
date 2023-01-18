@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 105%;
 }
 
 .template__main .generate__template .btn__generate {
@@ -15,9 +14,6 @@
     background-color: #180213c7;
 }
 
-
-
-
 .template__main .generate__template .row__number-of-actions {
     margin-bottom: 6px;
     gap: 10px;
@@ -28,15 +24,6 @@
     margin: 6px 0px;
     color: rgb(18, 104, 18);
 }
-
-.template__main .generate__template .row__save {
-    display: flex;
-    align-items: center;
-    width: 300px;
-    margin-top: 3px;
-    gap: 6px;
-}
-
 
 .template__main .row__save label {
     flex-grow: 1;

@@ -17,9 +17,7 @@ function Dashboard({ reload }) {
         }
         getCards()
     }, [reload]);
-
-
-
+    
     function renderCards(id, title, value) {
         return <Card key={id} title={title} value={value} color="#133677" />
     }

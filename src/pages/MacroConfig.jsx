@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import PageView from "../components/templates/PageView";
 import { getTypes } from "../funcs/axios";
 import { AiOutlineClear, AiFillDelete, AiFillEdit } from "react-icons/ai";
-import Modal from "../components/Modal";
+import Modal from "../components/ModalConfig";
 
 
 export default function MacroConfig() {
@@ -94,8 +94,11 @@ export default function MacroConfig() {
                 {renderNewTypePage()}
 
                 <div className="row__table">
+                    <div className="row__table-desc">
+
                     <p>Selecione os tipos de macros a serem randomizados.</p>
                     <p>Para mudar o status clique em ON/OFF.</p>
+                    </div>
                     <table className="table__types">
                         <thead>
                             <tr>
