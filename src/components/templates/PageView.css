@@ -1,13 +1,11 @@
 .view__main {
     background-color: rgb(73, 71, 76);
     display: grid;
-    grid-template-columns: 16% 2fr 9%;
-    grid-template-rows: 1fr 4vh;
+    grid-template-columns: auto 2fr auto;
     grid-template-areas:
-        "menu main dashboard"
-        "footer footer footer";
-    width: 100vw;
-    min-height: 100vh;
+    "menu main dashboard";
+    gap:  90px;
+    min-height: 80vh;
 }
 
 .view__footer {
@@ -18,22 +16,16 @@
 
 .view__menu {
     grid-area: menu;
+    width: 100%;
 }
 
-.modal--focus {
-    position: absolute;
-    top: 0px;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(111, 111, 111, 0.703);
-    display: none;
-    z-index: 0;
-}
-
-.template__main .view__dashboard {
+.view__dashboard {
     grid-area: dashboard;
-    display: block;
-    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 1vw;
+    min-width: 100px;
 }
 
 .container__main {
@@ -41,6 +33,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    padding-left: 2px;
 }
 
 .template__main {
@@ -51,6 +45,7 @@
     align-items: center;
     padding: 10px;
     border-radius: 3px;
+    width: 100%;
 }
 
 .template__main .title {
@@ -141,7 +136,7 @@
 
 .template__main .btn__clear {
     font-size: 1rem;
-    background-color:   #b3b3b3;
+    background-color: #b3b3b3;
     border: solid 1px #ffffff0a;
     padding: 4px 20px;
 }
@@ -163,6 +158,18 @@
 
 .template__main .btn__save:active {
     background-color: rgb(7, 87, 23);
+}
+
+
+.modal--focus {
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(111, 111, 111, 0.703);
+    z-index: 0;
+    display: none;
 }
 
 @media screen and (max-width: 641px) {

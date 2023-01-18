@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./PageView.css"
 import Menu from "./Menu";
 import Dashboard from "../Dashboard";
-import Footer from "./Footer";
 
 const PageView = (props) => {
     const [dashboard, setDashboard] = useState(true)
@@ -10,7 +9,7 @@ const PageView = (props) => {
     useEffect(function () {
         const dashboardview = document.querySelector('.view__dashboard')
         if (dashboard) {
-            dashboardview.style.display = 'block'
+            dashboardview.style.display = 'flex'
         } else {
             dashboardview.style.display = 'none'
         }
@@ -36,11 +35,10 @@ const PageView = (props) => {
                 <div className="view__menu">
                     <Menu dashboardHandler={() => handler(setDashboard)} />
                 </div>
-                <div className="view__footer">
-                    <Footer dashboardHandler={() => handler(setDashboard)} />
-                </div>
             </div>
-            <div className="modal--focus" />
+            
+        <div className="modal--focus" >AETAER</div>
+            
         </>
     )
 }

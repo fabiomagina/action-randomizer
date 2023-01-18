@@ -1,23 +1,28 @@
 import './Modal.css'
 
-export default function renderModal({
-    btnDesc, modalStyle, modalTitle, typeId, typeTitle, setTypeTitle, closeModal }) {
 
-        
+export default function renderModal({
+    btnDesc, modalStyle, modalTitle, modal__main }) {
+
+    const modalFocus = document.querySelector('.modal--focus')
+
+    function closeModal(modalTypeStyle) {
+        const modal = document.querySelector(`.${modalStyle}`)
+        modal.setAttribute('style', 'display: none')
+        modalFocus.setAttribute('style', 'display: none')
+    }
+
     return (
 
         <div className={`modal ${modalStyle}`} >
+
             <div className="row__modal--title">
                 <h2>{modalTitle}</h2>
-                <button className="btn__close" onClick={() => closeModal(modalStyle)}>X</button>
-
+                <button className="btn__close" onClick={() => closeModal()}>X</button>
             </div>
 
             <div className="row__modal--inputs">
-                <label>Id:</label>
-                <input type="text" className="n-input" value={typeId} readOnly />
-                <label>Title:</label>
-                <input type="text" onChange={(e) => setTypeTitle(e.target.value)} value={typeTitle} />
+                {modal__main}
             </div>
 
             <div className="row__btn">

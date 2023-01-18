@@ -6,25 +6,24 @@
     margin: 10px 0px;
     height: 100vh;
     flex-grow: 1;
-    
+    max-height: 90px;
+    width: 100%;
 }
 
-.card .title {
+.card .row__card--title {
     font-size: 1.2rem;
     padding: 5px 0px;
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   text-align: end;
+   margin-right: 20px;
 }
 
 .card .content {
-    font-size: 2rem;
+    font-size: 1.7rem;
     display: flex;
     flex-grow: 3;
     background-color: #06132c;
     color: rgb(255, 255, 255);
-    padding: 5px 80px;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 9px;
     align-items: center;
 }

@@ -4,7 +4,6 @@ import { sendAction } from "../funcs/axios";
 import PageView from "../components/templates/PageView";
 import { useEffect } from "react";
 
-
 export default function InsertAction(props) {
     const [actionIndex, setActionIndex] = useState(1)
     const [action, setAction] = useState('')

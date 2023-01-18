@@ -11,7 +11,7 @@ const card = (props) => {
     
     return (
         <div className="card" style={cardStyle}>
-            <div className="title">{props.title}</div>
+            <div className="row__card--title">{props.title}</div>
             <div className="content">
                 {props.value}
             </div>

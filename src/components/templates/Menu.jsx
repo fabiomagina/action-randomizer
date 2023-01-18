@@ -2,15 +2,17 @@ import React from "react";
 import Cube from "../templates/Cube"
 import { Link } from 'react-router-dom'
 import './Menu.css'
+import Copy from "./Copy";
 
 function Menu(props) {
     return (
         <aside className="menu">
-            <div className="logo">
+            <div className="row__logo">
                 <Cube />
-                <h1 className="title">RANDOMIZER</h1>
+                <h1 className="menu__title">RANDOMIZER</h1>
             </div>
-            <ul>
+                <Copy />
+            <ul className="menu__items">
                 <li>
                     <Link onClick={props.dashboardHandler} >Dashboard</Link>
                 </li>

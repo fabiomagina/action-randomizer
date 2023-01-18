@@ -1,9 +1,5 @@
-
 .dashboard-row {
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
-    margin-right: 4%;
-    max-height: 95vh;
+    width: 100%;
 }
-

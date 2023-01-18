@@ -1,14 +1,15 @@
-aside {
+.menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
     width: 100%;
+    min-width: 200px;
     background-color: rgb(22, 22, 22);
     font-size: 1.3rem;
 }
 
-aside .logo {
+.menu .row__logo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,28 +18,33 @@ aside .logo {
     
 }
 
-aside .logo h1 {
-    font-size: 1.5rem;
-    font-weight: 300;
-    
-    
-}
-
-aside svg {
+.menu svg {
     width: 190px;
     margin: 13px 0px 15px 0px;
 }
 
-ul, li,a  {
-    margin: 0px;
-    padding: 8px;
-    list-style: none;
-    text-align: right;
-    text-decoration: none;
+.menu .menu__title {
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
+.menu .menu__items {
+    padding: 0;
+    width: 100%;
 
-.menu a {
-    color: rgb(116, 201, 244);
+}
+
+.menu .menu__items li  {
+    padding: 14px 0px;
+    list-style: none;
+    text-align: right;
+}
+.menu .menu__items a {
+    margin: 0px;
+    font-size: 1.4rem;
+    margin-right: 18px;
+    text-decoration: none;
+    line-height: 0.8rem;
+    color: rgba(116, 201, 244, 0.927);
     cursor: pointer;
 }

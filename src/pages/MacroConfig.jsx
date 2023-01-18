@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react'
 import PageView from "../components/templates/PageView";
 import { getTypes } from "../funcs/axios";
 import { AiOutlineClear, AiFillDelete, AiFillEdit } from "react-icons/ai";
-import Modal from "../components/ModalConfig";
-
+import Modal from "../components/Modal";
 
 export default function MacroConfig() {
     const [types, setTypes] = useState([])
@@ -40,26 +39,28 @@ export default function MacroConfig() {
         if (modalStyle === '.modal__type--new') clearType()
         else setEditType(type)
     }
-
-    function closeModal(modalTypeStyle) {
-        const modal = document.querySelector(`.${modalTypeStyle}`)
-        modal.setAttribute('style', 'display: none')
-        modalFocus.setAttribute('style', 'display: none')
-    }
-
+    
     function setEditType(type) {
         setTypeId(type.id)
         setTypeTitle(type.title)
     }
 
     function renderEditPage() {
-        return <Modal btnDesc="Edit" modalStyle='modal__type--edit' modalTitle={'Edit Type: '} typeId={typeId} typeTitle={typeTitle}
-            setTypeTitle={setTypeTitle} closeModal={closeModal} />
+        const modal__main = <><label>Id:</label>
+        <input type="text" className="n-input" value={typeId} readOnly />
+        <label>Title:</label>
+        <input type="text" onChange={(e) => setTypeTitle(e.target.value)} value={typeTitle} /></>
+        return <Modal modalTitle={'Edit Macro Type  :'} btnDesc="Edit" modalStyle='modal__type--edit' modal__main={modal__main}/>
     }
 
     function renderNewTypePage() {
-        return <Modal btnDesc="Create" modalStyle='modal__type--new' modalTitle={'New Type: '} typeId={typeId} typeTitle={typeTitle}
-            setTypeTitle={setTypeTitle} closeModal={closeModal} newTypeModal />
+        const modal__main = 
+                <><label>Id:</label>
+                <input type="text" className="n-input" value={typeId} readOnly />
+                <label>Title:</label>
+                <input type="text" onChange={(e) => setTypeTitle(e.target.value)} value={typeTitle} /></>
+
+        return <Modal modalTitle={'New Macro Type:'} btnDesc="Create" modalStyle='modal__type--new' newTypeModal modal__main={modal__main} />
     }
 
     function renderType(type) {
@@ -80,11 +81,9 @@ export default function MacroConfig() {
                     <button id={type.id} onClick={
                         () => deleteType(type)}
                     ><AiFillDelete /></button>
-
                 </td>
             </tr >
-        )
-    }
+        )}
 
     return (
 
@@ -120,8 +119,6 @@ export default function MacroConfig() {
                         New Type</button>
                 </div>
             </div>
-
-
 
         </PageView>
     )
