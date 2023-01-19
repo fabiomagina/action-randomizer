@@ -1,64 +1,21 @@
 {
   "pures": [
     {
-      "id": 1,
-      "title": "Macro 1",
-      "list": []
-    },
-    {
-      "id": 2,
-      "title": "Macro 2",
-      "list": []
-    },
-    {
-      "id": 3,
-      "title": "Macro 3",
-      "list": []
-    },
-    {
-      "id": 4,
-      "title": "Macro 4",
-      "list": []
-    },
-    {
-      "title": "Novo Macro",
+      "title": "Macro Type 1",
       "list": [],
-      "id": 5
+      "status": true,
+      "id": 1
     },
     {
-      "title": "macro_uniao",
+      "title": "Macro Type 2",
       "list": [],
-      "id": 6
-    },
-    {
-      "title": "operacao_1",
-      "list": [],
-      "id": 7
-    },
-    {
-      "title": "operacao_3",
-      "list": [],
-      "id": 8
-    },
-    {
-      "title": "Macro 11",
-      "list": [],
-      "id": 9
-    },
-    {
-      "title": "232",
-      "list": [],
-      "id": 10
-    },
-    {
-      "title": "operacao_8",
-      "list": [],
-      "id": 11
+      "status": 0,
+      "id": 2
     }
   ],
   "generated": [],
   "counter": {
-    "actions": 0,
+    "actions": 17,
     "types": 0,
     "created": 0
   }

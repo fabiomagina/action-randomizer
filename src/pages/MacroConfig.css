@@ -100,16 +100,20 @@
     font-size: 1rem;
 }
 
-.template__main .config__template .table__types .status--active {
-    color: green;
+.template__main .config__template .table__types .btn__status {
     cursor: pointer;
-    padding: 0 9px;
+    width: 60px;
+    border: none;
+    font-size: 1rem;
+}
+
+.template__main .config__template .table__types .btn__status--active {
+    color: green;
     background-color: rgb(18, 18, 18);
 }
 
-.template__main .config__template .table__types .status--inactive {
+.template__main .config__template .table__types .btn__status--inactive {
     color: rgb(140, 1, 1);
     background-color: rgb(18, 18, 18);
-    cursor: pointer;
-    padding: 0 9px;
+   
 }
