@@ -190,11 +190,58 @@
 }
 
 @media screen and (max-width: 641px) {
+    .body {
+        width: 100vh;
+    }
+
+    .App {
+        height: 100%;
+    }
+
+    .container__main {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .view__main {
+        margin-top: 50px
+    }
+
     .view__menu {
-        display: none;
+        position: absolute;
+        width: 200px;
+        left: 0px;
+        z-index: -1;
     }
 
     .view__dashboard {
+        position: relative;
+        width: 80vw;
+    }
+
+    .row__menu--hamburguer {
+        position: fixed;
+        top: 3%;
+        left: 6%;        
+        z-index: 2;
+    }
+
+    .row__menu--hamburguer .menu--hamburguer {
+        background-color: #1b1b1be1;
+        color: #848484;
+        padding: 8px;
+        border-radius: 16px;
+        border: none;
+        line-height: 1rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .row__menu--hamburguer {
         display: none;
     }
 
