@@ -1,5 +1,8 @@
 .App {    
     border-radius: 3px;
-    
+    display: flex;
+    min-width: 63vw;
+    height: 90vh;
+    justify-content: center;
 }
 

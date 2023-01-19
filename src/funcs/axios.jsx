@@ -68,14 +68,34 @@ export function clearActionsDb(type, reload) {
 }
 
 export function getTypes(setTypes) {
-
     let url = `${baseUrl}/pures/`
     axios.get(url)
         .then(res => res.data)
         .then(data => {
             let arrayTipos = []
-            data.forEach(type => arrayTipos.push({id: type.id, title:type.title}))
+            data.forEach(type => arrayTipos.push({ id: type.id, title: type.title }))
             return arrayTipos
         })
-        .then(res => setTypes(res))
-    }
+        .then(res =>
+            setTypes(res))
+}
+
+export function saveTypeTitle(typeId, typeTitle, callback) {
+    let url = `${baseUrl}/pures/${typeId}`
+    axios.get(url)
+        .then(res => res.data)
+        .then(data => {
+            const type = data
+            type.title = typeTitle
+            axios.put(url, type)
+                .then(getTypes(callback))
+                .then(console.log)
+        })
+}
+
+export function postNewType(typeTitle) {
+    let url = `${baseUrl}/pures`
+    let newType = { title: typeTitle, list: []}
+    axios.post(url, newType)
+        .then(console.log)
+}

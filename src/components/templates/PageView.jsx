@@ -22,23 +22,26 @@ const PageView = (props) => {
 
     return (
         <>
-            <div className="view__main">
-                <div className="container__main">
+            <div className="container__main">
+                <div className="view__menu">
+                    <Menu dashboardHandler={() => handler(setDashboard)} />
+                </div>
+                <div className="view__main">
                     <div className="template__main">
+                        <div className="row__title">
                         <h1 className="title">{props.title}</h1>
+                        </div>
                         {props.children}
                     </div>
                 </div>
                 <div className="view__dashboard">
                     <Dashboard reload={props.reload} />
                 </div>
-                <div className="view__menu">
-                    <Menu dashboardHandler={() => handler(setDashboard)} />
-                </div>
+
             </div>
-            
-        <div className="modal--focus" >AETAER</div>
-            
+
+            <div className="modal--focus" />
+
         </>
     )
 }

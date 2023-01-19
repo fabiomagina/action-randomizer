@@ -1,15 +1,16 @@
 import "./MacroConfig.css"
 import { useState, useEffect } from 'react'
 import PageView from "../components/templates/PageView";
-import { getTypes } from "../funcs/axios";
+import { getTypes, saveTypeTitle, postNewType } from "../funcs/axios";
 import { AiOutlineClear, AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { Link } from 'react-router-dom'
 import Modal from "../components/Modal";
 
 export default function MacroConfig() {
     const [types, setTypes] = useState([])
-    const [typeId, setTypeId] = useState('')
+    const [typeId, setTypeId] = useState(0)
     const [typeTitle, setTypeTitle] = useState('?')
+    const [reload, setReload] = useState(0)
 
     const modalFocus = document.querySelector('.modal--focus')
 
@@ -18,7 +19,9 @@ export default function MacroConfig() {
     }, [])
 
     useEffect(() => {
-    }, [types])
+        getTypes(setTypes)
+        clearType()
+    }, [reload])
 
     function showStatus(status, id) {
         if (status) return <p className="status--active">ON</p>
@@ -28,9 +31,19 @@ export default function MacroConfig() {
     function clearType() {
         setTypeId('?')
         setTypeTitle('')
+        setReload(0)
+    }
+
+    async function saveTypeChanges() {
+        saveTypeTitle(typeId, typeTitle, setReload)
     }
 
     function deleteType(id) {
+    }
+
+    function setEditTypeModal(type) {
+        setTypeId(type.id)
+        setTypeTitle(type.title)
     }
 
     function openModal(type = '', modalStyle = '.modal__type--edit') {
@@ -38,30 +51,33 @@ export default function MacroConfig() {
         modal.setAttribute('style', 'display: block')
         modalFocus.setAttribute('style', 'display: block')
         if (modalStyle === '.modal__type--new') clearType()
-        else setEditType(type)
-    }
-    
-    function setEditType(type) {
-        setTypeId(type.id)
-        setTypeTitle(type.title)
+        else setEditTypeModal(type)
     }
 
-    function renderEditPage() {
-        const modal__main = <><label>Id:</label>
-        <input type="text" className="n-input" value={typeId} readOnly />
-        <label>Title:</label>
-        <input type="text" onChange={(e) => setTypeTitle(e.target.value)} value={typeTitle} /></>
-        return <Modal modalTitle={'Edit Macro Type  :'} btnDesc="Edit" modalStyle='modal__type--edit' modal__main={modal__main}/>
+    function renderTable() {
+        return types.map(type => renderType(type))
     }
 
-    function renderNewTypePage() {
-        const modal__main = 
-                <><label>Id:</label>
-                <input type="text" className="n-input" value={typeId} readOnly />
-                <label>Title:</label>
-                <input type="text" onChange={(e) => setTypeTitle(e.target.value)} value={typeTitle} /></>
+    function renderEditModal() {
+        const modal__main = <>
+            <label>Id:</label>
+            <input type="text" className="n-input" value={typeId} readOnly />
+            <label>Title:</label>
+            <input type="text" onChange={(e) => setTypeTitle(e.target.value)} value={typeTitle} />
+        </>
+        return <Modal modalTitle={'Edit Macro Type  :'} btnDesc="Save"
+            modalStyle='modal__type--edit' modal__main={modal__main} callback={saveTypeChanges} />
+    }
 
-        return <Modal modalTitle={'New Macro Type:'} btnDesc="Create" modalStyle='modal__type--new' newTypeModal modal__main={modal__main} />
+    function renderNewTypeModal() {
+        const modal__main = <>
+            <label>Id:</label>
+            <input type="text" className="n-input" value={typeId} readOnly />
+            <label>Title:</label>
+            <input type="text" onChange={(e) => setTypeTitle(e.target.value)} value={typeTitle} />
+        </>
+        return <Modal modalTitle={'New Macro Type:'} btnDesc="Create"
+            modalStyle='modal__type--new' newTypeModal modal__main={modal__main} callback={() => postNewType(typeTitle)} />
     }
 
     function renderType(type) {
@@ -71,7 +87,6 @@ export default function MacroConfig() {
                 <td className="td__title"> {type.title}</td>
                 <td>{showStatus(type.status)}</td>
                 <td className="td__operations">
-
                     <button id={type.id} onClick={
                         () => openModal(type)}>
                         <AiFillEdit /> </button>
@@ -84,21 +99,22 @@ export default function MacroConfig() {
                     ><AiFillDelete /></button>
                 </td>
             </tr >
-        )}
+        )
+    }
 
     return (
 
-        <PageView title="MACRO CONFIG">
+        <PageView title="MACRO CONFIG" reload={reload}>
             <div className="config__template">
-                {renderEditPage()}
-                {renderNewTypePage()}
+                {renderEditModal()}
+                {renderNewTypeModal()}
 
-                <div className="row__table">
-                    <div className="row__table-desc">
+                <div className="row__table-desc">
 
                     <p>Selecione os tipos de macros a serem randomizados.</p>
                     <p>Para mudar o status clique em ON/OFF.</p>
-                    </div>
+                </div>
+                <div className="row__table">
                     <table className="table__types">
                         <thead>
                             <tr>
@@ -109,7 +125,7 @@ export default function MacroConfig() {
                             </tr>
                         </thead>
                         <tbody>
-                            {types.map(type => renderType(type))}
+                            {renderTable()}
                         </tbody>
                     </table>
                 </div>
@@ -118,7 +134,7 @@ export default function MacroConfig() {
                     <button className="btn btn__save" onClick={
                         () => openModal('', '.modal__type--new')} >
                         New Type</button>
-                    
+
                     <Link to="/generate_action"><button className="btn btn__clear">Generate Macro</button></Link>
                 </div>
             </div>

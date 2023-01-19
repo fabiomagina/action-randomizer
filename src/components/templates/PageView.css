@@ -1,22 +1,26 @@
-.view__main {
-    background-color: rgb(73, 71, 76);
+.container__main {
     display: grid;
-    grid-template-columns: auto 2fr auto;
+    grid-template-columns: 200px 1fr 150px;
     grid-template-areas:
-    "menu main dashboard";
-    gap:  90px;
-    min-height: 80vh;
+        'menu main dashboard';
+    align-items: center;    
+    background-color: #282828;
+    gap: 60px;
+    max-height: 100%;
+    width: 100%;
+    position: relative;
 }
 
-.view__footer {
-    grid-area: footer;
-    margin: 0;
-    max-height: 40px;
+.view__main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .view__menu {
     grid-area: menu;
-    width: 100%;
+    height: 100%;
 }
 
 .view__dashboard {
@@ -24,17 +28,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 1vw;
     min-width: 100px;
-}
-
-.container__main {
-    grid-area: main;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    right: 0;
     width: 100%;
-    padding-left: 2px;
 }
 
 .template__main {
@@ -43,39 +40,57 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
     border-radius: 3px;
     width: 100%;
+    margin: 16px;
+    max-width: 350px;
+
 }
 
-.template__main .title {
-    align-self: center;
+.template__main .row__title {
     background-color: rgba(193, 193, 193, 0.4);
     width: 100%;
+    margin-bottom: 24px;
+}
+
+.template__main .row__title .title {
+    padding-right: 18px;
     text-align: end;
-    padding: 30px 6% 20px 0px;
-    margin-top: -12px;
-    margin-bottom: 36px;
     letter-spacing: -0.03rem;
     font-weight: 500;
     color: #161616;
     font-size: 1.8rem;
+    margin: 24px 0 12px 0px;
 }
 
 .template__main label {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     color: black;
-    margin: 6px 0px;
+    margin: 6px;
 }
 
 .template__main input {
-    font-size: 1.3rem
+    font-size: 1.3rem;
+    background-color: #c2c2c2;
+    border: none;
+}
+
+.template__main input:focus {
+    background-color: #e0e0e0;
+
 }
 
 .template__main .n-input {
     width: 48px;
     outline: none;
+    text-align: end;
 }
+
+.template__main .n-input::content {
+    padding-right: 20px;
+}
+
+
 
 
 .template__main .row {
@@ -101,9 +116,9 @@
 }
 
 .template__main .row__type {
+    justify-content: center;
     width: 100%;
-    justify-content: flex-start;
-    gap: 20px;
+    gap: 16px;
 }
 
 .template__main .row__textarea {
@@ -143,7 +158,7 @@
 
 .template__main .btn__clear:active {
     background-color: #848484;
-    
+
 }
 
 .template__main .btn__save {

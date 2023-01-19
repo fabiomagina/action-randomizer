@@ -1,5 +1,6 @@
-.template__main {
-    width: 350px;
+.App .template__main {
+    max-width: 600px;
+    width: auto;
 }
 
 .template__main .config__template {
@@ -8,6 +9,36 @@
     justify-content: center;
     align-items: center;
     border-radius: 3px;
+    margin: 12px;
+}
+
+.template__main .config__template .row__table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6px;
+    overflow-x: hidden;    
+    overflow-y: scroll;
+    max-height: 50vh;
+}
+
+    
+.template__main .config__template .row__table .table__types {
+    text-align: center;
+    background-color: rgb(86, 19, 19);
+    color: rgba(243, 243, 243, 0.71);
+    font-size: 1.3rem;
+    
+}
+.template__main::-webkit-scrollbar-track {
+    background-color: #b63535;
+}
+.template__main .config__template .row__table .row__table::-webkit-scrollbar {
+    width: 6px;
+    background-color: #2c1414;
+}
+.template__main .config__template::-webkit-scrollbar-thumb {
+    background-color: #421d1d;
 }
 
 .template__main .config__template .row__table-desc {
@@ -19,13 +50,7 @@
     text-align: center;
     margin: 2px
 }
-    
-.template__main .config__template .table__types {
-    text-align: center;
-    background-color: rgb(86, 19, 19);
-    color: rgba(243, 243, 243, 0.71);
-    font-size: 1.3rem;
-}
+
 
 .template__main .config__template .table__types thead {
     padding: 0px 3px;
@@ -34,7 +59,8 @@
 }
 
 .template__main .config__template .table__types .td__title {
-    width: 600px;
+    max-width: 200px;
+    min-width: 100px;
 }
 
 .template__main .config__template .table__types td {

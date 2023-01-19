@@ -2,7 +2,7 @@ import './Modal.css'
 
 
 export default function renderModal({
-    btnDesc, modalStyle, modalTitle, modal__main }) {
+    btnDesc, modalStyle, modalTitle, modal__main, callback }) {
 
     const modalFocus = document.querySelector('.modal--focus')
 
@@ -26,7 +26,10 @@ export default function renderModal({
             </div>
 
             <div className="row__btn">
-                <button className="btn btn__save">{btnDesc}</button>
+                <button className="btn btn__save" onClick={() => { 
+                    closeModal()
+                    callback()
+                }}>{btnDesc}</button>
             </div>
 
 
