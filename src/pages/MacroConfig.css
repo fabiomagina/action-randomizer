@@ -20,7 +20,22 @@
     overflow-x: hidden;    
     overflow-y: scroll;
     max-height: 50vh;
+    scrollbar-color: #9b9b9be9 #500808c1;
+    scrollbar-width: thin;
 }
+
+.template__main .config__template .row__table::-webkit-scrollbar {
+    width: 6px;
+}
+
+.template__main .config__template .row__table::-webkit-scrollbar-thumb {
+    background-color: #9b9b9be9;
+}
+
+.template__main .config__template .row__table::-webkit-scrollbar-track-piece {
+    background-color: #500808c1;
+}
+
 
     
 .template__main .config__template .row__table .table__types {
