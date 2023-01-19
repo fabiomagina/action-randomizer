@@ -27,9 +27,13 @@
     color: rgb(18, 104, 18);
 }
 
-.template__main .row__save label {
+.template__main .generate__template .row__save label {
     flex-grow: 1;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-align: end;
     margin: 0;
+}
+
+.template__main .generate__template .row__save select {
+    max-width: 130px;
 }

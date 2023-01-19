@@ -1,25 +1,23 @@
 import React, { useState } from "react";
 import "./InsertAction.css"
-import { sendAction } from "../funcs/axios";
+import { sendAction, getTypes } from "../funcs/axios";
 import PageView from "../components/templates/PageView";
 import { useEffect } from "react";
 
 export default function InsertAction(props) {
-    const [actionIndex, setActionIndex] = useState(1)
+    const [types, setTypes] = useState([])
+    const [typeIndex, setTypeIndex] = useState(1)
     const [action, setAction] = useState('')
     const [counter, setCounter] = useState(0)
 
     useEffect(() => {
-    }
-        , [actionIndex])
+        getTypes(setTypes)
+    }, [])
 
     function reloadCounter(newCounter) {
         setCounter(newCounter)
     }
-    function updateActionIndex(e) {
-        const newIndex = +e.target.value
-        setActionIndex(newIndex)
-    }
+
     function updateAction(e) {
         const newAction = e.target.value
         setAction(newAction)
@@ -38,8 +36,11 @@ export default function InsertAction(props) {
             <div className="insert__template">
                 <div className="row row__type">
                     <label>Action Type:</label>
-                    <input className="n-input" name="number" type="number" value={actionIndex}
-                        onChange={e => updateActionIndex(e)} />
+                    <select name="select" onChange={e => setTypeIndex(e.target.value)} >
+                        {types.map((type) =>
+                            <option key={type.id} className="max-width"
+                                value={type.id}>{type.title}</option>)}
+                    </select>
                 </div>
                 <div className="row__textarea">
                     <label>Script: </label>
@@ -51,7 +52,7 @@ export default function InsertAction(props) {
                         () => clear()}>
                         clear</button>
                     <button className="btn btn__save" onClick={
-                        () => sendAction(actionIndex, action, clearAction, reloadCounter)}>
+                        () => sendAction(typeIndex, action, clearAction, reloadCounter)}>
                         Send</button>
 
                 </div>

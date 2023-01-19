@@ -34,7 +34,6 @@
     width: 100%;
 }
 
-
 .template__main {
     background-color: #9e9e9e;
     display: flex;
@@ -45,7 +44,6 @@
     width: 100%;
     margin: 16px;
     max-width: 350px;
-
 }
 
 .template__main .row__title {
@@ -67,13 +65,24 @@
 .template__main label {
     font-size: 1.6rem;
     color: black;
-    margin: 6px;
+    margin: 6px 0px;
 }
 
 .template__main input {
     font-size: 1.3rem;
     background-color: #c2c2c2;
     border: none;
+}
+
+.template__main select {
+    margin-top: 3px;
+    font-size: 1.1rem;
+    background-color: #c2c2c2;
+    color: #161616;
+    border: none;
+    width: auto;
+    max-width: 150px;
+    text-align: center;
 }
 
 .template__main input:focus {
@@ -91,16 +100,12 @@
     padding-right: 20px;
 }
 
-
-
-
 .template__main .row {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 0px;
     border-radius: 39px;
-    gap: 0px;
 }
 
 .template__main .row__btn {
@@ -117,9 +122,16 @@
 }
 
 .template__main .row__type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.template__main .row__action-loops {
     justify-content: center;
     width: 100%;
-    gap: 16px;
+    gap: 12px;
 }
 
 .template__main .row__textarea {
@@ -127,7 +139,10 @@
     flex-direction: column;
     width: 100%;
     margin: 6px 0;
+}
 
+.template__main .row__textarea label {
+    margin: 6px 16px;
 }
 
 .template__main textarea {
@@ -137,7 +152,7 @@
     border: none;
     max-width: 280px;
     align-self: center;
-    margin-top: 6px;
+    width: 100%;
 }
 
 .template__main .btn {

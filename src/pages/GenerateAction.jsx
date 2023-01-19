@@ -1,37 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./GenerateAction.css"
 import PageView from "../components/templates/PageView";
-import { postGenerated } from "../funcs/axios";
+import { postGenerated, getTypes } from "../funcs/axios";
 import generateAction from "../funcs/generateAction";
 
 export default function GenerateAction() {
-    const [numberOfActions, setNumberOfActions] = useState(1)
-    const [counter, setCounter] = useState(0)
+    const [types, setTypes] = useState([])
+    const [nLoops, setNLoops] = useState(1)
+    const [reload, setReload] = useState(0)
     const [actions, setActions] = useState([])
     const [saveType, setSaveType] = useState(0)
 
-    function reloadCounter(newCounter) {
-        setCounter(newCounter)
-    }
+    useEffect(() => {
+        getTypes(setTypes)
+    }, [])
 
-    function renderResults(results) {
-        setActions(results)
-
-    }
     function clear() {
-        setNumberOfActions(0)
+        setNLoops(0)
         setActions('')
     }
 
     return (
-        <PageView reload={counter} title="GENERATE ACTIONS">
-
+        <PageView reload={reload} title="GENERATE ACTIONS">
             <div className="generate__template">
 
-                <div className="row row__type">
+                <div className="row row__action-loops">
                     <label>Number of Actions:</label>
-                    <input className="n-input" name="numberOfActions" type="number" value={numberOfActions}
-                        onChange={e => setNumberOfActions(e.target.value)} />
+                    <input className="n-input" name="nLoops" type="number" value={nLoops}
+                        onChange={e => setNLoops(e.target.value)} />
                 </div>
 
                 <div className="row__btn">
@@ -39,25 +35,29 @@ export default function GenerateAction() {
                         () => clear()}>
                         clear generated actions</button>
                     <button className="btn btn__generate" onClick={
-                        () => generateAction(renderResults)}>
+                        () => generateAction(nLoops, types, setActions)}>
                         Generate Actions</button>
                 </div>
 
                 <div className="row__textarea">
                     <textarea cols="50" rows="13" id="results" name="action" type="text" value={actions}
-                        onChange={e => setActions(e)} />
+                        onChange={e => setActions(e.target.value)} />
                 </div>
 
                 <div className="row__btn row__save">
-                    <label>Save type:</label>
-                    <input className="n-input" name="saveType" type="number" value={saveType}
-                        onChange={e => setSaveType(e.target.value)} />
+                    <label >Save as:</label>
+                    <select name="select" onChange={e => setSaveType(e.target.value)} >
+                        {types.map((type) =>
+                            <option key={type.id} className="max-width"
+                                value={type.id}>{type.title}</option>)}
+                    </select>
+
                     <button className="btn btn__save" onClick={
-                        () => postGenerated(reloadCounter, actions, saveType, clear)}>
+                        () => postGenerated(setReload, actions, saveType, clear)}>
                         Save</button>
                 </div>
             </div>
-        </PageView>
+        </PageView >
     )
 }
 

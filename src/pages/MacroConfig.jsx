@@ -70,7 +70,7 @@ export default function MacroConfig() {
             <label>Id:</label>
             <input type="text" className="n-input" value={type.id} readOnly />
             <label>Title:</label>
-            <input type="text" onChange={(e) => setType({ ...type, title: e.target.value })}
+            <input type="text" maxLength={12} onChange={(e) => setType({ ...type, title: e.target.value })}
                 value={type.title} />
         </>
         return <Modal modalTitle={'Edit Macro Type  :'} btnDesc="Save"
@@ -100,7 +100,7 @@ export default function MacroConfig() {
             <label>Id:</label>
             <input type="text" className="n-input" value={type.id} readOnly />
             <label>Title:</label>
-            <input type="text" onChange={(e) => setType({ ...type, title: e.target.value })}
+            <input type="text" maxLength={14} onChange={(e) => setType({ ...type, title: e.target.value })}
                 value={type.title} />
         </>
         return <Modal modalTitle={'New Macro Type:'} btnDesc="Create"

@@ -1,17 +1,20 @@
 import React from "react";
-import Cube from "../templates/Cube"
-import { Link } from 'react-router-dom'
-import './Menu.css'
+import { HiOutlineCubeTransparent } from "react-icons/hi";
+import { Link } from "react-router-dom"
+import "./Menu.css"
 import Copy from "./Copy";
 
 function Menu(props) {
     return (
         <aside className="menu">
-            <div className="row__logo">
-                <Cube />
-                <h1 className="menu__title">RANDOMIZER</h1>
+            <div className="row__menu--logo">
+                <HiOutlineCubeTransparent />
+                <div className="row__menu--title">
+                    <h1 className="menu__title">ACTION</h1>
+                    <h1 className="menu__title menu__title--randomizer">RANDOMIZER</h1>
+                </div>
             </div>
-                <Copy />
+            {/* <Copy /> */}
             <ul className="menu__items">
                 <li>
                     <Link onClick={props.dashboardHandler} >Dashboard</Link>

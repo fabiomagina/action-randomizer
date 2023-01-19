@@ -11,9 +11,12 @@ const PageView = (props) => {
 
     useEffect(function () {
         const dashboardView = document.querySelector('.view__dashboard')
+        const containerMain = document.querySelector('.container__main')
         if (dashboard) {
-            dashboardView.style.display = 'flex'
+            dashboardView.style.display = 'flex'            
+            containerMain.setAttribute('style', 'grid-template-columns: 200px 1fr 150px')
         } else {
+            containerMain.setAttribute('style', 'grid-template-columns: 200px 1fr')
             dashboardView.style.display = 'none'
         }
     }, [dashboard])
