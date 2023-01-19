@@ -155,6 +155,17 @@
     width: 100%;
 }
 
+.template__main textarea::selection {
+  color: rgba(255, 255, 255, 0.226);
+  background: rgb(57, 57, 39);
+}
+
+.template__main textarea::-moz-selection {
+    /* padding: 30px; */
+    color: rgb(214, 214, 214);
+    background: rgba(94, 89, 89, 0.048);
+}
+
 .template__main .btn {
     font-size: 1.1rem;
     padding: 5px 25px;
