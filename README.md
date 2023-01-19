@@ -8,5 +8,5 @@ Define the Types of Macros you want to loop/concatenate.
 In Macro Config, create a Macro Type where you will save your records.
 ... ps.: the order created, will be the order of concatenations.
 Insert actions recorded with Macro Record in Insert Actions page.
-Select which Types of Macros should be used to generate a new Macro in Config Page.
-Then, select the number of times you want to print a concatenation of position randomized random actions from Actions Types actives.
+In Macro Config page select which Types of macros should be used to generate a new Macro.
+In Generate Macro, select the number of times you want to print a concatenation of position randomized random actions from actives Types.
