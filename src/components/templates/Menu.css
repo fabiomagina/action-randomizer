@@ -13,7 +13,7 @@
     color: rgba(255, 255, 255, 0.247);
     font-size: 6rem;
     width: 100%;
-    padding-top: 10vw;
+    padding-top: 3vw;
     padding-bottom: 3vw;
 }
 
@@ -30,7 +30,7 @@
 
 .menu .row__menu--title {
     position: absolute;
-    top: 9vw;
+    top: 3vw;
     padding-top: 63px;
     color: rgba(231, 231, 231, 0.877);
     background-color: rgba(0, 0, 0, 0.84);
