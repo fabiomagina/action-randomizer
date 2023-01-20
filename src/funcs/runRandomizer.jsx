@@ -4,7 +4,6 @@ export default function runRandomizer(pureAction) {
     let splittedOld = pureAction.split('\n')
     splittedOld.forEach((actionLine, i) => {
         let oldNumbersLineArray = actionLine.match(/(\d+)/g)
-        console.log(oldNumbersLineArray)
         if (oldNumbersLineArray) {
             let newNumbersLineArray = oldNumbersLineArray.map((oldNumber) => {
                 return addRandom(oldNumber).toString()                

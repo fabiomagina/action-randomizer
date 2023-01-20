@@ -118,3 +118,12 @@
 .template__main .config__template .modal .modal__newType--main .row {
     gap: 9px
 }
+
+.template__main .config__template .modal .row__modal--inputs .row__label--edit-page {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.template__main .config__template .modal .row__modal--inputs .input__n--loops {
+    width: 48px;
+}

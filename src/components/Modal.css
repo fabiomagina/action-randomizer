@@ -13,18 +13,6 @@
     z-index: 2;
 }
 
-.template__main .modal .n-input {
-    background-color: grey;
-    width: 20px;
-    text-align: center;
-    
-}
-
-.template__main .modal input {
-    outline: none;
-    height: 30px;
-    width: 200px;
-}
 
 .template__main .modal .row__modal--inputs {
     display: flex;
@@ -71,9 +59,6 @@
     cursor: pointer;
     line-height: 10px;
 }
-
-
-
 
 .template__main .config__template .modal .row__modal--title h2 {
     margin-bottom: 9px;

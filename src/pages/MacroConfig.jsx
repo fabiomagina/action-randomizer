@@ -1,14 +1,14 @@
 import "./MacroConfig.css"
 import { useState, useEffect } from 'react'
 import PageView from "../components/templates/PageView";
-import { getTypes, saveTypeTitle, postNewType, deleteType, setStatus, clearActionsFromType } from "../funcs/axios";
+import { getTypes, saveTypeChanges, postNewType, deleteType, setStatus, clearActionsFromType } from "../funcs/axios";
 import { AiOutlineClear, AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { Link } from 'react-router-dom'
 import Modal from "../components/Modal";
 
 export default function MacroConfig() {
     const [types, setTypes] = useState([])
-    const [type, setType] = useState({ id: '?', title: '', status: false, posStatus: false })
+    const [type, setType] = useState({ id: '?', title: '', status: false, pos_status: false, n_loops: 1 })
     const [reload, setReload] = useState(false)
 
     const modalFocus = document.querySelector('.modal--focus')
@@ -31,8 +31,8 @@ export default function MacroConfig() {
 
     function handlePosStatus() {
         let newType = { ...type }
-        newType.posStatus = !type.posStatus
-        if (type.posStatus === false) {
+        newType.pos_status = !type.pos_status
+        if (type.pos_status === false) {
             return <button onClick={() => setType({ ...newType })}
                 className="btn__status btn__status--inactive">OFF</button>
         }
@@ -41,20 +41,17 @@ export default function MacroConfig() {
     }
 
     function showRandPosStatus(typeId, status) {
-        if (status) return <button onClick={() => setStatus(typeId, 'posStatus', !status, setTypes)}
+        if (status) return <button onClick={() => setStatus(typeId, 'pos_status', !status, setTypes)}
             className="btn__status btn__status--active">ON</button>
-        else return <button onClick={() => setStatus(typeId, 'posStatus', !status, setTypes)}
+        else return <button onClick={() => setStatus(typeId, 'pos_status', !status, setTypes)}
             className="btn__status btn__status--inactive">OFF</button>
     }
 
     function clearType() {
-        setType({ id: '?', title: '', status: false, posStatus: false })
+        setType({ id: '?', title: '', status: false, pos_status: false, n_loops: 1 })
         setReload(0)
     }
 
-    async function saveTypeChanges() {
-        saveTypeTitle(type.id, type.title, setReload)
-    }
 
     function openModal(type = '', modalStyle = '.modal__type--edit') {
         const modal = document.querySelector(modalStyle)
@@ -71,8 +68,9 @@ export default function MacroConfig() {
                     <tr>
                         <th>Id</th>
                         <th>Title</th>
+                        <th>loops</th>
                         <th>Status</th>
-                        <th>Rand Pos?</th>
+                        <th>randPos</th>
                         <th>Operations</th>
                     </tr>
                 </thead>
@@ -88,9 +86,9 @@ export default function MacroConfig() {
             <tr key={type.id}>
                 <td>{type.id}</td>
                 <td className="td__title"> {type.title}</td>
-
+                <td className="td__loops">{type.n_loops}</td>
                 <td>{showStatus(type.id, type.status)}</td>
-                <td>{showRandPosStatus(type.id, type.posStatus)}</td>
+                <td>{showRandPosStatus(type.id, type.pos_status)}</td>
 
                 <td className="td__operations">
                     <button id={type.id} onClick={
@@ -110,14 +108,22 @@ export default function MacroConfig() {
 
     function renderEditModal() {
         const modal__main = <>
-            <label>Id:</label>
-            <input type="text" className="n-input" value={type.id} readOnly />
-            <label>Title:</label>
-            <input type="text" maxLength={14} onChange={(e) => setType({ ...type, title: e.target.value })}
-                value={type.title} />
+            <div className="row">
+                <label>Id:</label>
+                <input type="text" id="modal__type--edit--input--id" className="n-input" value={type.id} readOnly />
+                <label>nLoops:</label>
+                <input type="number" id="modal__type--edit--input--n-loops" className="n-input input__n--loops" onChange={
+                    (e) => setType({ ...type, n_loops: e.target.value })} value={type.n_loops} />
+
+            </div>
+            <div className="row">
+                <label>Title:</label>
+                <input type="text" name="modal__config--input--title" maxLength={14} onChange={(e) => setType({ ...type, title: e.target.value })}
+                    value={type.title} />
+            </div>
         </>
         return <Modal modalTitle={'Edit Macro Type  :'} btnDesc="Save"
-            modalStyle='modal__type--edit' modal__main={modal__main} callback={saveTypeChanges} />
+            modalStyle='modal__type--edit' modal__main={modal__main} callback={() => saveTypeChanges(type.id, type.title, type.n_loops, setReload)} />
     }
 
     function renderClearActionsModal() {
@@ -142,24 +148,28 @@ export default function MacroConfig() {
         const modal__main =
             <div className="modal__newType--main">
                 <div className="row">
-                    <label>Id:</label>
-                    <input type="text" className="n-input" value={type.id || false} readOnly />
-                </div>
-                <div className="row">
                     <label>Title:</label>
-                    <input type="text" maxLength={14} onChange={(e) => setType({ ...type, title: e.target.value })}
+                    <input type="text" id="modal__type--new--input--title" maxLength={14} onChange={
+                        (e) => setType({ ...type, title: e.target.value })}
                         value={type.title} />
                 </div>
-                <div className="row row__save">
-                    <label>Rand Pos? </label>
+                <div className="row">
+
+                    <label>nLoops: </label>
+                    <input type="number" id="modal__type--new--input--n-loops" className="n-input" maxLength={14} onChange={
+                        (e) => setType({ ...type, n_loops: e.target.value })}
+                        value={type.n_loops} />
+                </div>
+                <div className="row">
+                    <label>Rand Pos: </label>
                     {handlePosStatus()}
                 </div>
-
             </div>
+
         return <Modal modalTitle={'New Macro Type:'} btnDesc="Create"
             modalStyle='modal__type--new' newTypeModal modal__main={modal__main}
             callback={() => {
-                postNewType(type.title, type.posStatus)
+                postNewType(type.title, type.pos_status, type.n_loops)
                 setReload(1)
             }} />
     }

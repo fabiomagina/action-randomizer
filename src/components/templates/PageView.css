@@ -68,37 +68,64 @@
     margin: 6px 0px;
 }
 
-.template__main input {
-    font-size: 1.3rem;
-    background-color: #c2c2c2;
-    border: none;
-}
-
 .template__main select {
     margin-top: 3px;
     font-size: 1.1rem;
-    background-color: #c2c2c2;
-    color: #161616;
+    background-color: #29211d34;
+    color: #000000e6;
     border: none;
     width: auto;
     max-width: 150px;
     text-align: center;
+    border: 0.6px solid rgba(0, 0, 0, 0.384);
+}
+
+.template__main input {
+    font-size: 1.3rem;
+    background-color: #ffffff34;
+    color: #e7e7e7ea;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    height: 27px;
+    width: 200px;
 }
 
 .template__main input:focus {
-    background-color: #e0e0e0;
-
+    background-color: #ffffff9c;
+    color: #171717fa;
+    border-radius: 3px;
 }
 
 .template__main .n-input {
     width: 48px;
-    outline: none;
     text-align: end;
+    background-color: #29211d34;
+    color: #000000e6;
+    
 }
 
-.template__main .n-input::content {
-    padding-right: 20px;
+.template__main .n-input:focus {
+    background-color: #5a595934;
+    color: #151515;
 }
+
+.template__main .modal .n-input {
+    background-color: #ffffff34;
+    color: #e7e7e7fa;
+}
+.template__main .modal .n-input:focus {
+    background-color: #ffffff9c;
+    color: #171717fa;
+}
+
+.template__main .modal .input--readonly:focus {
+    background-color: #ffffff34;
+    
+    color: #e7e7e7fa;
+}
+
+
 
 .template__main .row {
     display: flex;
@@ -106,6 +133,7 @@
     align-items: center;
     margin: 0px;
     border-radius: 39px;
+    gap: 12px
 }
 
 .template__main .row__btn {

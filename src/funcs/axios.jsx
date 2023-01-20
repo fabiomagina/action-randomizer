@@ -74,30 +74,29 @@ export function getTypes(setTypes) {
         .then(data => {
             let arrayTipos = []
             data.forEach(type => arrayTipos.push(
-                { id: type.id, title: type.title, status: type.status, posStatus: type.posStatus}))
+                { id: type.id, title: type.title, status: type.status, pos_status: type.pos_status, n_loops: type.n_loops}))
             return arrayTipos
         })
         .then(setTypes)
 }
 
-export function saveTypeTitle(typeId, typeTitle, callback) {
+export function saveTypeChanges(typeId, typeTitle, n_loops, reload) {
     let url = `${baseUrl}/pures/${typeId}`
     axios.get(url)
         .then(res => res.data)
         .then(data => {
             const type = data
             type.title = typeTitle
+            type.n_loops = n_loops
             axios.put(url, type)
-                .then(getTypes(callback))
-                .then(console.log)
+                .then(reload(1))
         })
 }
 
-export function postNewType(typeTitle, posStatus) {
+export function postNewType(typeTitle, pos_status, n_loops) {
     let url = `${baseUrl}/pures`
-    let newType = { title: typeTitle, status: 0, posStatus, list: []}
+    let newType = { title: typeTitle, status: 0, pos_status, n_loops, list: []}
     axios.post(url, newType)
-        .then(console.log)
 }
 
 export function deleteType(id, callback) {

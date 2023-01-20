@@ -27,8 +27,11 @@ function newRandomizedActionsFromTypeId(actionsArray, activeIds) {
     let newMacro = ''
     actionsArray.forEach(actionType => {
         if (activeIds.includes(actionType.id)) {
-            if (actionType.posStatus)
-                newMacro += runRandomizer(getRandomItem(actionType.list))
+            if (actionType.pos_status) {
+                for (let i = 0; i < actionType.n_loops; i++) {
+                    newMacro += runRandomizer(getRandomItem(actionType.list))
+                }
+            }            
             else newMacro += getRandomItem(actionType.list) + '\n'
         }
     })
