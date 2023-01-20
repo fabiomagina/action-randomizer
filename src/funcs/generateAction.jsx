@@ -13,13 +13,12 @@ export default async function generateMacro(nLoops, types, callback, reload) {
             return newMacro
         })
         .then(callback)
-        .then(() => reload(true))
+        .then(reload)
 }
 
 function generateActionsFromActiveTypes(actionsArray, activeTypesIds) {
     let newActions = ''
     newActions += newRandomizedActionsFromTypeId(actionsArray, activeTypesIds)
-
     return newActions
 }
 
@@ -28,11 +27,9 @@ function newRandomizedActionsFromTypeId(actionsArray, activeIds) {
     let newMacro = ''
     actionsArray.forEach(actionType => {
         if (activeIds.includes(actionType.id)) {
-            console.log(actionType.id)
             newMacro += runRandomizer(getRandomItem(actionType.list))
         }
     })
-    console.log(newMacro)
     return newMacro
 }
 

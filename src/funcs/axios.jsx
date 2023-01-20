@@ -35,7 +35,7 @@ export function updateCounterDb(reload, type = 'actions') {
         .then(res => {
             let counter = { ...res, [type]: res[type] + 1 }
             axios.put(url, counter)
-            reload(counter)
+            reload()    
         })
 }
 

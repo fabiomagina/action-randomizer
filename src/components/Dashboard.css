@@ -8,3 +8,15 @@
     scrollbar-color: #9b9b9b4a #000000c1;
     scrollbar-width: thin !important;
 }
+
+.dashboard-row::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dashboard-row::-webkit-scrollbar-thumb {
+    background-color: #9b9b9b4a;
+}
+
+.dashboard-row::-webkit-scrollbar-track-piece {
+    background-color: #000000c1;
+}

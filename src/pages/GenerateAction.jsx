@@ -9,7 +9,7 @@ export default function GenerateAction() {
     const [nLoops, setNLoops] = useState(1)
     const [reload, setReload] = useState(false)
     const [actions, setActions] = useState([])
-    const [saveType, setSaveType] = useState(0)
+    const [saveType, setSaveType] = useState(1)
 
     useEffect(() => {
         getTypes(setTypes)
@@ -17,7 +17,6 @@ export default function GenerateAction() {
 
 
     function clear() {
-        setNLoops(0)
         setActions('')
     }
 
