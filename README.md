@@ -19,7 +19,4 @@ Follow these steps to generate a new randomized macro:
 ![generate-actions](https://user-images.githubusercontent.com/30575553/213792852-8d3cac03-9576-4d42-9692-e6d46a379cb5.jpeg)
 ![generate-actions2](https://user-images.githubusercontent.com/30575553/213792858-7c92e051-267c-4f08-86c3-6916e74a4094.jpeg)
 ![Macro Config](https://user-images.githubusercontent.com/30575553/213792871-f44b76a4-72af-4c60-889a-8471422f3047.jpeg)
-![mobal__new-type](https://user-images.githubusercontent.com/30575553/213792879-21939b66-4845-4515-bec5-24128ac0aff8.jpeg)
-![modal__clear-macro](https://user-images.githubusercontent.com/30575553/213792880-acffe6a1-0a70-46c8-bd9d-8a9b5942623c.jpeg)
-![modal__delete-type](https://user-images.githubusercontent.com/30575553/213792882-1ed3178c-73ba-4ced-9dd2-35f0397628a5.jpeg)
-![modal__edit-type](https://user-images.githubusercontent.com/30575553/213792884-8b60dbd0-3075-4a4a-911c-30efcdc8deb7.jpeg)
+
