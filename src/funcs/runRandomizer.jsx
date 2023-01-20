@@ -18,7 +18,7 @@ export default function runRandomizer(pureAction) {
 }
 
 function addRandom(number) {
-    if (number != 0) {
+    if (+number !== 0) {
         let oldNumber = +number
         const c = Math.floor(Math.random() * 6) - 2
         let newNumber = c + oldNumber

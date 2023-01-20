@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./GenerateAction.css"
 import PageView from "../components/templates/PageView";
-import { postGenerated, getTypes } from "../funcs/axios";
+import { sendAction, getTypes } from "../funcs/axios";
 import generateAction from "../funcs/generateAction";
 
 export default function GenerateAction() {
@@ -9,12 +9,11 @@ export default function GenerateAction() {
     const [nLoops, setNLoops] = useState(1)
     const [reload, setReload] = useState(false)
     const [actions, setActions] = useState([])
-    const [saveType, setSaveType] = useState(1)
+    const [saveTypeId, setSaveTypeId] = useState(1)
 
     useEffect(() => {
         getTypes(setTypes)
     }, [])
-
 
     function clear() {
         setActions('')
@@ -46,14 +45,14 @@ export default function GenerateAction() {
 
                 <div className="row__btn row__save">
                     <label >Save as:</label>
-                    <select name="select" onChange={e => setSaveType(e.target.value)} >
+                    <select name="select" onChange={e => setSaveTypeId(e.target.value)} >
                         {types.map((type) =>
                             <option key={type.id} className="max-width"
                                 value={type.id}>{type.title}</option>)}
                     </select>
 
                     <button className="btn btn__save" onClick={
-                        () => postGenerated(setReload, actions, saveType, clear)}>
+                        () => sendAction(saveTypeId, actions, clear, setReload )}>
                         Save</button>
                 </div>
             </div>

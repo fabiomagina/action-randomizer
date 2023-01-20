@@ -2,14 +2,13 @@ import axios from 'axios'
 
 const baseUrl = 'http://localhost:3000'
 
-export function sendAction(type, action, callback, reload) {
-    let url = `${baseUrl}/pures/${type}`
+export function sendAction(typeId, action, callback, reload) {
+    let url = `${baseUrl}/pures/${typeId}`
     axios.get(url)
         .then(res => res.data)
-        .then(data => {
-            let list = data.list
-            list.push(action)
-            axios.put(url, { id: type, title: data.title, list: list })
+        .then(type => {
+            type.list.push(action)
+            axios.put(url, type)
         })
         .then(() => updateCounterDb(reload))
         .then(() => callback())
@@ -20,9 +19,8 @@ export function postGenerated(reload, action, type, clearCallback) {
     axios.get(url)
         .then(res => res.data)
         .then(data => {
-            let list = data.list
-            list.push(action)
-            axios.put(url, { id: type, title: data.title, list: list })
+            type.list.push(action)
+            axios.put(url, type)
         })
         .then(() => updateCounterDb(reload))
         .then(() => clearCallback())
@@ -35,7 +33,7 @@ export function updateCounterDb(reload, type = 'actions') {
         .then(res => {
             let counter = { ...res, [type]: res[type] + 1 }
             axios.put(url, counter)
-            reload()    
+            reload()
         })
 }
 
@@ -56,13 +54,16 @@ export function getActions() {
         .then(res => res.data)
 }
 
-export function clearActionsFromType(type, reload) {
-    let url = `${baseUrl}/pures/${type}`
+export function clearActionsFromType(typeId, reload) {
+    let url = `${baseUrl}/pures/${typeId}`
     axios.get(url)
         .then(res => res.data)
         .then(data => {
             let list = []
-            axios.put(url, { id: type, title: data.title, list: list })
+            axios.put(url, {
+                id: typeId, title: data.title, n_loops: 1,
+                status: false, pos_status: false, list: list
+            })
         })
         .then(reload)
 }
@@ -74,7 +75,7 @@ export function getTypes(setTypes) {
         .then(data => {
             let arrayTipos = []
             data.forEach(type => arrayTipos.push(
-                { id: type.id, title: type.title, status: type.status, pos_status: type.pos_status, n_loops: type.n_loops}))
+                { id: type.id, title: type.title, status: type.status, pos_status: type.pos_status, n_loops: type.n_loops }))
             return arrayTipos
         })
         .then(setTypes)
@@ -95,16 +96,16 @@ export function saveTypeChanges(typeId, typeTitle, n_loops, reload) {
 
 export function postNewType(typeTitle, pos_status, n_loops) {
     let url = `${baseUrl}/pures`
-    let newType = { title: typeTitle, status: 0, pos_status, n_loops, list: []}
+    let newType = { title: typeTitle, status: 0, pos_status, n_loops, list: [] }
     axios.post(url, newType)
 }
 
 export function deleteType(id, callback) {
     let url = `${baseUrl}/pures/${id}`
     axios.delete(url)
-        .then(setTimeout(function() {
+        .then(setTimeout(function () {
             getTypes(callback);
-          }, 50))
+        }, 50))
 }
 
 export function setStatus(typeId, typeStatusType, status, callback) {
@@ -115,9 +116,9 @@ export function setStatus(typeId, typeStatusType, status, callback) {
             const type = data
             type[typeStatusType] = status
             axios.put(url, type)
-            .then(setTimeout(function() {
-                getTypes(callback);
-              }, 100))
+                .then(setTimeout(function () {
+                    getTypes(callback);
+                }, 100))
         })
 }
 
