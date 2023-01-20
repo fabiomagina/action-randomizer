@@ -159,7 +159,7 @@ export default function MacroConfig() {
         return <Modal modalTitle={'New Macro Type:'} btnDesc="Create"
             modalStyle='modal__type--new' newTypeModal modal__main={modal__main}
             callback={() => {
-                postNewType(type.title)
+                postNewType(type.title, type.posStatus)
                 setReload(1)
             }} />
     }

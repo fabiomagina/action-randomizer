@@ -93,9 +93,9 @@ export function saveTypeTitle(typeId, typeTitle, callback) {
         })
 }
 
-export function postNewType(typeTitle) {
+export function postNewType(typeTitle, posStatus) {
     let url = `${baseUrl}/pures`
-    let newType = { title: typeTitle, list: [], status: 0 }
+    let newType = { title: typeTitle, status: 0, posStatus, list: []}
     axios.post(url, newType)
         .then(console.log)
 }
