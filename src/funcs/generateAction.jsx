@@ -2,7 +2,7 @@ import { getActions } from './axios'
 import getRandomItem from './getRandomItem'
 import runRandomizer from './runRandomizer'
 
-export default async function generateMacro(nLoops, types, callback) {
+export default async function generateMacro(nLoops, types, callback, reload) {
     let activeTypesIds = getActiveTypesIds(types)
     getActions()
         .then(actionsArray => {
@@ -13,6 +13,7 @@ export default async function generateMacro(nLoops, types, callback) {
             return newMacro
         })
         .then(callback)
+        .then(() => reload(true))
 }
 
 function generateActionsFromActiveTypes(actionsArray, activeTypesIds) {

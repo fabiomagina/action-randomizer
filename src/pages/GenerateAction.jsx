@@ -7,13 +7,14 @@ import generateAction from "../funcs/generateAction";
 export default function GenerateAction() {
     const [types, setTypes] = useState([])
     const [nLoops, setNLoops] = useState(1)
-    const [reload, setReload] = useState(0)
+    const [reload, setReload] = useState(false)
     const [actions, setActions] = useState([])
     const [saveType, setSaveType] = useState(0)
 
     useEffect(() => {
         getTypes(setTypes)
     }, [])
+
 
     function clear() {
         setNLoops(0)
@@ -35,7 +36,7 @@ export default function GenerateAction() {
                         () => clear()}>
                         clear generated actions</button>
                     <button className="btn btn__generate" onClick={
-                        () => generateAction(nLoops, types, setActions)}>
+                        () => generateAction(nLoops, types, setActions, setReload(!reload))}>
                         Generate Actions</button>
                 </div>
 

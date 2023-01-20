@@ -15,7 +15,7 @@ export function sendAction(type, action, callback, reload) {
         .then(() => callback())
 }
 
-export function postGenerated(reload, action, type, clearCallback,) {
+export function postGenerated(reload, action, type, clearCallback) {
     let url = `${baseUrl}/pures/${type}`
     axios.get(url)
         .then(res => res.data)

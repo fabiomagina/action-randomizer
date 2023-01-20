@@ -20,5 +20,8 @@
       "title": "Macro 4",
       "list": []
     }
-  ]
+  ],
+  "counter": {
+    "actions": 0
+  }
 }

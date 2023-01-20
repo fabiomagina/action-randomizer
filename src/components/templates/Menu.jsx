@@ -2,7 +2,6 @@ import React from "react";
 import { HiOutlineCubeTransparent } from "react-icons/hi";
 import { Link } from "react-router-dom"
 import "./Menu.css"
-import Copy from "./Copy";
 
 function Menu(props) {
     return (
