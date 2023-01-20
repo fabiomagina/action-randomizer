@@ -1,21 +1,14 @@
-function addRandom(number) {
-    if (number !== 0) {
-        let oldNumber = +number
-        const c = Math.floor(Math.random() * 6) - 2
-        let newNumber = c + oldNumber
-        return newNumber
-    } else {
-        return 0
-    }
-}
 
-function newAction(pureAction) {
+export default function runRandomizer(pureAction) {
     let newAction = ''
     let splittedOld = pureAction.split('\n')
     splittedOld.forEach((actionLine, i) => {
         let oldNumbersLineArray = actionLine.match(/(\d+)/g)
+        console.log(oldNumbersLineArray)
         if (oldNumbersLineArray) {
-            let newNumbersLineArray = oldNumbersLineArray.map((oldNumber) => (addRandom(oldNumber).toString()))
+            let newNumbersLineArray = oldNumbersLineArray.map((oldNumber) => {
+                return addRandom(oldNumber).toString()                
+            })
             var newActionLine = newNumbersLineArray.reduce(function (acc, newValue, i) {
                 return acc.replace(oldNumbersLineArray[i], newValue)
             }, actionLine)
@@ -25,8 +18,13 @@ function newAction(pureAction) {
     return newAction
 }
 
-function runRandomizer(actionModelo) {
-    return newAction(actionModelo)
+function addRandom(number) {
+    if (number != 0) {
+        let oldNumber = +number
+        const c = Math.floor(Math.random() * 6) - 2
+        let newNumber = c + oldNumber
+        return newNumber
+    } else {
+        return 0
+    }
 }
-
-export default runRandomizer

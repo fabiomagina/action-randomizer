@@ -73,7 +73,8 @@ export function getTypes(setTypes) {
         .then(res => res.data)
         .then(data => {
             let arrayTipos = []
-            data.forEach(type => arrayTipos.push({ id: type.id, title: type.title, status: type.status}))
+            data.forEach(type => arrayTipos.push(
+                { id: type.id, title: type.title, status: type.status, posStatus: type.posStatus}))
             return arrayTipos
         })
         .then(setTypes)
@@ -107,16 +108,17 @@ export function deleteType(id, callback) {
           }, 50))
 }
 
-export function setStatus(typeId, status, callback) {
+export function setStatus(typeId, typeStatusType, status, callback) {
     let url = `${baseUrl}/pures/${typeId}`
     axios.get(url)
         .then(res => res.data)
         .then(data => {
             const type = data
-            type.status = status
+            type[typeStatusType] = status
             axios.put(url, type)
             .then(setTimeout(function() {
                 getTypes(callback);
               }, 100))
         })
 }
+

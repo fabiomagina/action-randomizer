@@ -88,30 +88,33 @@
 
 }
 
-.template__main .config__template .table__types .td__operations button {
+.template__main .config__template .td__operations button {
     margin-top: 6px;
     border-radius: 30px;
 }
 
-.template__main .config__template .table__types .td__operations p {
+.template__main .config__template .td__operations p {
     margin: 0px;
     font-size: 1rem;
 }
 
-.template__main .config__template .table__types .btn__status {
+.template__main .config__template .btn__status {
     cursor: pointer;
     width: 60px;
     border: none;
     font-size: 1rem;
 }
 
-.template__main .config__template .table__types .btn__status--active {
+.template__main .config__template .btn__status--active {
     color: green;
     background-color: rgb(18, 18, 18);
 }
 
-.template__main .config__template .table__types .btn__status--inactive {
+.template__main .config__template .btn__status--inactive {
     color: rgb(140, 1, 1);
     background-color: rgb(18, 18, 18);
-   
+}
+
+.template__main .config__template .modal .modal__newType--main .row {
+    gap: 9px
 }

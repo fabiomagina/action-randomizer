@@ -215,6 +215,12 @@
     display: none;
 }
 
+.template__main .modal .modal__newType--main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 @media screen and (max-width: 641px) {
     .body {
         width: 100vh;

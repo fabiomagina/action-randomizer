@@ -8,8 +8,8 @@ import Modal from "../components/Modal";
 
 export default function MacroConfig() {
     const [types, setTypes] = useState([])
-    const [type, setType] = useState(0)
-    const [reload, setReload] = useState(0)
+    const [type, setType] = useState({ id: '?', title: '', status: false, posStatus: false })
+    const [reload, setReload] = useState(false)
 
     const modalFocus = document.querySelector('.modal--focus')
 
@@ -23,21 +23,38 @@ export default function MacroConfig() {
     }, [reload])
 
     function showStatus(typeId, status) {
-        if (status) return <button onClick={() => setStatus(typeId, !status, setTypes)}
+        if (status) return <button onClick={() => setStatus(typeId, 'status', !status, setTypes)}
             className="btn__status btn__status--active">ON</button>
-        else return <button onClick={() => setStatus(typeId, !status, setTypes)}
+        else return <button onClick={() => setStatus(typeId, 'status', !status, setTypes)}
+            className="btn__status btn__status--inactive">OFF</button>
+    }
+
+    function handlePosStatus() {
+        let newType = { ...type }
+        newType.posStatus = !type.posStatus
+        if (type.posStatus === false) {
+            return <button onClick={() => setType({ ...newType })}
+                className="btn__status btn__status--inactive">OFF</button>
+        }
+        else return <button onClick={() => setType({ ...newType })}
+            className="btn__status btn__status--active">ON</button>
+    }
+
+    function showRandPosStatus(typeId, status) {
+        if (status) return <button onClick={() => setStatus(typeId, 'posStatus', !status, setTypes)}
+            className="btn__status btn__status--active">ON</button>
+        else return <button onClick={() => setStatus(typeId, 'posStatus', !status, setTypes)}
             className="btn__status btn__status--inactive">OFF</button>
     }
 
     function clearType() {
-        setType({ id: '?', title: '', status: false })
+        setType({ id: '?', title: '', status: false, posStatus: false })
         setReload(0)
     }
 
     async function saveTypeChanges() {
         saveTypeTitle(type.id, type.title, setReload)
     }
-
 
     function openModal(type = '', modalStyle = '.modal__type--edit') {
         const modal = document.querySelector(modalStyle)
@@ -55,13 +72,39 @@ export default function MacroConfig() {
                         <th>Id</th>
                         <th>Title</th>
                         <th>Status</th>
+                        <th>Rand Pos?</th>
                         <th>Operations</th>
                     </tr>
                 </thead>
                 <tbody>
-                        {types.map(type => renderType(type))}
+                    {types.map(type => renderType(type))}
                 </tbody>
             </table>
+        )
+    }
+
+    function renderType(type) {
+        return (
+            <tr key={type.id}>
+                <td>{type.id}</td>
+                <td className="td__title"> {type.title}</td>
+
+                <td>{showStatus(type.id, type.status)}</td>
+                <td>{showRandPosStatus(type.id, type.posStatus)}</td>
+
+                <td className="td__operations">
+                    <button id={type.id} onClick={
+                        () => openModal(type)}>
+                        <AiFillEdit /> </button>
+                    <button id={type.id} onClick={
+                        () => openModal(type, '.modal__type--clear')}
+                    > <AiOutlineClear />
+                    </button>
+                    <button id={type.id} onClick={
+                        () => openModal(type, '.modal__type--delete')}
+                    ><AiFillDelete /></button>
+                </td>
+            </tr >
         )
     }
 
@@ -70,7 +113,7 @@ export default function MacroConfig() {
             <label>Id:</label>
             <input type="text" className="n-input" value={type.id} readOnly />
             <label>Title:</label>
-            <input type="text" maxLength={12} onChange={(e) => setType({ ...type, title: e.target.value })}
+            <input type="text" maxLength={14} onChange={(e) => setType({ ...type, title: e.target.value })}
                 value={type.title} />
         </>
         return <Modal modalTitle={'Edit Macro Type  :'} btnDesc="Save"
@@ -96,41 +139,29 @@ export default function MacroConfig() {
     }
 
     function renderNewTypeModal() {
-        const modal__main = <>
-            <label>Id:</label>
-            <input type="text" className="n-input" value={type.id} readOnly />
-            <label>Title:</label>
-            <input type="text" maxLength={14} onChange={(e) => setType({ ...type, title: e.target.value })}
-                value={type.title} />
-        </>
+        const modal__main =
+            <div className="modal__newType--main">
+                <div className="row">
+                    <label>Id:</label>
+                    <input type="text" className="n-input" value={type.id || false} readOnly />
+                </div>
+                <div className="row">
+                    <label>Title:</label>
+                    <input type="text" maxLength={14} onChange={(e) => setType({ ...type, title: e.target.value })}
+                        value={type.title} />
+                </div>
+                <div className="row row__save">
+                    <label>Rand Pos? </label>
+                    {handlePosStatus()}
+                </div>
+
+            </div>
         return <Modal modalTitle={'New Macro Type:'} btnDesc="Create"
             modalStyle='modal__type--new' newTypeModal modal__main={modal__main}
             callback={() => {
                 postNewType(type.title)
                 setReload(1)
             }} />
-    }
-
-    function renderType(type) {
-        return (
-            <tr key={type.id}>
-                <td>{type.id}</td>
-                <td className="td__title"> {type.title}</td>
-                <td>{showStatus(type.id, type.status)}</td>
-                <td className="td__operations">
-                    <button id={type.id} onClick={
-                        () => openModal(type)}>
-                        <AiFillEdit /> </button>
-                    <button id={type.id} onClick={
-                        () => openModal(type, '.modal__type--clear')}
-                    > <AiOutlineClear />
-                    </button>
-                    <button id={type.id} onClick={
-                        () => openModal(type, '.modal__type--delete')}
-                    ><AiFillDelete /></button>
-                </td>
-            </tr >
-        )
     }
 
     return (

@@ -14,7 +14,7 @@ export default function renderModal({
 
     return (
 
-        <div className={`modal ${modalStyle}`} >
+        <div key={modalStyle} className={`modal ${modalStyle}`} >
 
             <div className="row__modal--title">
                 <h2>{modalTitle}</h2>
