@@ -22,6 +22,7 @@ Macro based on Mouse Record actions.<br>
 - Go to Generate Macro and select the number of concatenation loops; <br>
 - Press Generate to create a concatenation of <underline>position randomized random actions</underline> from actives Types; <br>
 <br>
+
 <p align="center">
  <img src="https://user-images.githubusercontent.com/30575553/213792858-7c92e051-267c-4f08-86c3-6916e74a4094.jpeg" width=66% height=66%>
 </p>
@@ -31,7 +32,9 @@ Macro based on Mouse Record actions.<br>
 
 ### Instagram Action Randomizer
 
+<p align="center">
+
 ![actionRandomizer](https://user-images.githubusercontent.com/30575553/214922775-8eeb278a-44c9-44b3-b35e-e98954b05304.JPG)
 
-<br>Send me a message at fabiomagina@gmail.com for custom versions. 
+</p>
  
