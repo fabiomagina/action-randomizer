@@ -4,10 +4,6 @@
 App to select random macros records in lists, randomize mouse positions and create loops/concatenate Macros.<br>
 Macro based on Mouse Record actions.
 
-![insert-actions2](https://user-images.githubusercontent.com/30575553/213792863-f0095779-16fa-4e9c-801f-9592503949f0.JPG)
-![generate-actions2](https://user-images.githubusercontent.com/30575553/213792858-7c92e051-267c-4f08-86c3-6916e74a4094.jpeg)
-![Macro Config](https://user-images.githubusercontent.com/30575553/213792871-f44b76a4-72af-4c60-889a-8471422f3047.jpeg)
-
 ## How to use
 
 Follow these steps to generate a new randomized macro:
@@ -20,9 +16,13 @@ Follow these steps to generate a new randomized macro:
 - Select the number of concatenation loops. <br>
 - Generate.<br>
 
+![Macro Config](https://user-images.githubusercontent.com/30575553/213792871-f44b76a4-72af-4c60-889a-8471422f3047.jpeg)
+![insert-actions2](https://user-images.githubusercontent.com/30575553/213792863-f0095779-16fa-4e9c-801f-9592503949f0.JPG)
+![generate-actions2](https://user-images.githubusercontent.com/30575553/213792858-7c92e051-267c-4f08-86c3-6916e74a4094.jpeg)
+
 ## Custom Versions
-For custom version call me at fabiomagina@gmail.com
 
 ### Custom Instagram Version
 
 ![actionRandomizer](https://user-images.githubusercontent.com/30575553/214922775-8eeb278a-44c9-44b3-b35e-e98954b05304.JPG)
+For custom version call me at fabiomagina@gmail.com
