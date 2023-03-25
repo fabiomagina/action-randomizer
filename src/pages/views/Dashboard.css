@@ -1,0 +1,23 @@
+.dashboard__template {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 23px;
+    scrollbar-color: #9b9b9b4a #000000c1;
+    scrollbar-width: thin !important;
+    height: 100%;
+    padding-bottom: 6px;
+}
+
+.dashboard__template::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dashboard__template::-webkit-scrollbar-thumb {
+    background-color: #9b9b9b4a;
+}
+
+.dashboard__template::-webkit-scrollbar-track-piece {
+    background-color: #000000c1;
+}

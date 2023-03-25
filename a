@@ -1,0 +1,29 @@
+const k = 'aaaeerjaeeirbbe'
+
+function verifica(k) {
+    const array = []
+    let i = 0
+    let firstIndex = 0
+    let lastIndex = 0
+    console.log(k.length)
+    while (i < k.length) {
+        if (k[i] == k[i + 1]) {
+            firstIndex = i
+            let elem1 = k[i]
+            let elem2 = k[i+1]
+            while (elem1 === elem2) {
+                lastIndex = i+1
+                i++
+                elem1 = k[i]
+                elem2 = k[i+1]
+            
+            }
+            array.push([firstIndex, lastIndex])
+        }
+        console.log(array)
+        i++
+    }
+
+}
+
+verifica(k)

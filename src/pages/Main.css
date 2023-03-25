@@ -1,0 +1,328 @@
+.container__main {
+    display: grid;
+    grid-template-columns: 1fr 270px;
+    grid-template-rows: 90px 1fr;
+    grid-template-areas:
+        'dashboard menu'
+        'dashboard main';
+    align-items: flex-start;
+    background-color: #282828;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.container__main .view__main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+}
+
+.container__main .view__menu {
+    grid-area: menu;
+    max-height: 100%;
+}
+
+.container__main .view__dashboard {
+    display: flex;
+    grid-area: dashboard;
+    align-self: center;
+    height: 95%;
+    overflow-y: hidden;
+}
+
+.container__main .row__title {
+    background-color: rgba(193, 193, 193, 0.4);
+    width: 100%;
+}
+
+.container__main .row__title .title {
+    padding-right: 18px;
+    text-align: end;
+    letter-spacing: -0.03rem;
+    font-weight: 500;
+    color: #161616;
+    font-size: 1.8rem;
+    margin: 24px 0 12px 0px;
+}
+
+.container__main label {
+    font-size: 1.3rem;
+    color: black;
+    margin: 6px 0px;
+}
+
+.container__main select {
+    margin-top: 3px;
+    font-size: 1.1rem;
+    background-color: #29211d34;
+    color: #000000e6;
+    border: none;
+    width: auto;
+    max-width: 150px;
+    text-align: center;
+    border: 0.6px solid rgba(0, 0, 0, 0.384);
+}
+
+.container__main input {
+    font-size: 1.3rem;
+    background-color: #ffffff34;
+    color: #e7e7e7ea;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    height: 27px;
+    width: 200px;
+}
+
+.container__main input:focus {
+    background-color: #ffffff9c;
+    color: #171717fa;
+    border-radius: 3px;
+}
+
+.container__main .n-input {
+    width: 48px;
+    text-align: end;
+    background-color: #29211d34;
+    color: #000000e6;
+
+}
+
+.container__main .n-input:focus {
+    background-color: #5a595934;
+    color: #151515;
+}
+
+.container__main .modal .n-input {
+    background-color: #ffffff34;
+    color: #e7e7e7fa;
+}
+
+.container__main .modal .n-input:focus {
+    background-color: #ffffff9c;
+    color: #171717fa;
+}
+
+.container__main .modal .input--readonly:focus {
+    background-color: #ffffff34;
+
+    color: #e7e7e7fa;
+}
+
+
+.container__main .modal .modal__newType--main .row {
+    gap: 9px
+}
+
+.container__main .modal .row__modal--inputs .row__label--edit-page {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container__main .modal .row__modal--inputs .input__n--loops {
+    width: 48px;
+}
+
+
+.container__main .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px;
+    border-radius: 39px;
+    gap: 12px
+}
+
+.container__main .row__btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 6px 0px;
+    min-width: 270px;
+    max-width: 300px;
+    gap: 6px;
+}
+
+.container__main .row__save {
+    margin-bottom: 9px;
+}
+
+.container__main .row__type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.container__main .row__action-loops {
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+}
+
+.container__main .row__textarea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 6px 0;
+}
+
+.container__main .row__textarea label {
+    margin: 6px 16px;
+}
+
+.container__main textarea {
+    background-color: rgb(35, 25, 39);
+    color: rgba(243, 243, 243, 0.71);
+    outline: none;
+    border: none;
+    max-width: 280px;
+    align-self: center;
+    width: 100%;
+}
+
+.container__main textarea::selection {
+    color: rgba(255, 255, 255, 0.226);
+    background: rgb(57, 57, 39);
+}
+
+.container__main textarea::-moz-selection {
+    /* padding: 30px; */
+    color: rgb(214, 214, 214);
+    background: rgba(94, 89, 89, 0.048);
+}
+
+.container__main .btn {
+    font-size: 1.1rem;
+    padding: 5px 25px;
+    color: rgb(31, 26, 26);
+    border-radius: 9px;
+    align-self: center;
+    gap: 10px;
+    border: none;
+}
+
+.container__main .btn__status {
+    cursor: pointer;
+    width: 60px;
+    border: none;
+    font-size: 1rem;
+}
+
+.container__main .btn__status--active {
+    color: green;
+    background-color: rgb(18, 18, 18);
+    overflow-x: hidden;
+}
+
+.container__main .btn__status--inactive {
+    color: rgb(140, 1, 1);
+    background-color: rgb(18, 18, 18);
+    overflow-x: hidden;
+}
+
+.container__main  .btn__clear {
+    font-size: 1rem;
+    background-color: #b3b3b3;
+    border: solid 1px #ffffff0a;
+    padding: 4px 20px;
+}
+
+.container__main  .btn__clear:active {
+    background-color: #848484;
+
+}
+
+.container__main .btn__save {
+    font-size: 1.1rem;
+    background-color: rgb(6, 30, 11);
+    color: rgb(228, 228, 228);
+}
+
+.container__main .btn__save:hover {
+    background-color: rgb(10, 49, 19);
+}
+
+
+.container__main .btn__save:active {
+    background-color: rgb(7, 87, 23);
+}
+
+.container__main .modal .modal__newType--main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.modal__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #adadad70;
+    display: none;
+    margin-bottom: 26%;
+}
+
+@media screen and (max-width: 641px) {
+    .body {
+        width: 100vh;
+    }
+
+    .App {
+        height: 100%;
+    }
+
+    .container__main {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .view__main {
+        margin-top: 50px
+    }
+
+    .view__menu {
+        position: absolute;
+        width: 200px;
+        left: 0px;
+        z-index: -1;
+    }
+
+    .row__menu--hamburguer {
+        position: fixed;
+        top: 3%;
+        left: 6%;
+        z-index: 2;
+    }
+
+    .row__menu--hamburguer .menu--hamburguer {
+        background-color: #1b1b1be1;
+        color: #848484;
+        padding: 8px;
+        border-radius: 16px;
+        border: none;
+        line-height: 1rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .row__menu--hamburguer {
+        display: none;
+    }
+
+
+}

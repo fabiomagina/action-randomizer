@@ -1,16 +1,14 @@
 import { Routes, Route } from "react-router-dom"
 import React from "react"
-import GenerateAction from "./GenerateAction"
-import InsertAction from "./InsertAction"
-import MacroConfig from "./MacroConfig"
-
+import Main from "./Main"
+import { ActionsProvider } from "../controllers/context/Actions"
 
 const Rotas = props => (
+    <ActionsProvider>
     <Routes>
-        <Route exact path="/" element={<InsertAction />} />
-        <Route exact path="/generate_action" element={<GenerateAction />} />
-        <Route exact path="/macro_config" element={<MacroConfig />} />
+        <Route exact path="/" element={<Main />} />
     </Routes>
+    </ActionsProvider>
 )
 
 export default Rotas

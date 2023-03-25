@@ -1,0 +1,125 @@
+.config__template {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 12px;
+}
+
+.config__template .row__reload {
+    width: 100%;
+    text-align: end;
+    padding-right: 36px;
+}
+
+.config__template .row__table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 44vh;
+    scrollbar-color: #9b9b9be9 #000000c2;
+    scrollbar-width: thin;
+}
+
+.config__template .row__table::-webkit-scrollbar {
+    width: 6px;
+}
+
+.config__template .row__table::-webkit-scrollbar-thumb {
+    background-color: #9b9b9be9;
+}
+
+.config__template .row__table::-webkit-scrollbar-track-piece {
+    background-color: #000000c2;
+}
+
+.template__main::-webkit-scrollbar-track {
+    background-color: #9b9b9be9;
+}
+
+.config__template .row__table .row__table::-webkit-scrollbar {
+    width: 6px;
+    background-color: #2c1414;
+}
+
+.config__template::-webkit-scrollbar-thumb {
+    background-color: #9b9b9be9;
+}
+
+.config__template .row__table .table__types {
+    text-align: center;
+    background-color: rgb(23, 74, 140);
+    color: rgba(245, 245, 245, 0.912);
+    font-size: 1.3rem;
+}
+
+.config__template .row__table-desc {
+    text-align: end;
+    margin-bottom: 9px;
+    margin-top: -6px;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.config__template .row__table-desc p {
+    text-align: end;
+    margin: 2px
+}
+
+.config__template .row__table .table__types th {
+    padding: 0 6px;
+    font-weight: 300;
+}
+
+.config__template .row__table .table__types tr {
+    height: 20px;
+}
+
+.config__template .table__types thead {
+    padding: 0px 3px;
+    background-color: rgb(20, 3, 21);
+    color: rgba(243, 243, 243, 0.71);
+}
+
+.config__template .table__types .td__title {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    min-width: 100px;
+}
+
+.config__template .table__types td {
+    height: 28px;
+}
+
+.config__template .table__types .td__operations {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+}
+
+.config__template .row__table .td__loops, .td__chance {
+    font-size: 1.2rem;
+}
+
+.config__template .row__table .td__value {
+    font-size: 1.4rem;
+}
+
+.config__template .td__operations p {
+    margin: 0px;
+    font-size: 1rem;
+}
+
+.config__template .btn__status {
+    cursor: pointer;
+    width: 40px;
+    border: none;
+    font-size: 1rem;
+    overflow-x: hidden;
+    margin: 2px;
+}

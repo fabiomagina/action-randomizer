@@ -5,15 +5,11 @@ import Rotas from "./pages/Routes";
 
 function App() {
   return (
-    
     <BrowserRouter>
-    
         <div className="App">
           <Rotas />
         </div>
-
     </BrowserRouter >
-
   )
 }
 

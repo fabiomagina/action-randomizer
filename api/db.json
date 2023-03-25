@@ -1,0 +1,43 @@
+{
+  "pures": [
+    {
+      "id": 1,
+      "title": "first",
+      "n_loops": 1,
+      "run": false,
+      "rand_pos": true,
+      "list": [
+        "first 123123",
+        ""
+      ],
+      "start": true
+    },
+    {
+      "id": 2,
+      "title": "Mid",
+      "n_loops": 1,
+      "run": true,
+      "rand_pos": true,
+      "list": [
+        "md 222"
+      ]
+    },
+    {
+      "title": "Last",
+      "status": 0,
+      "pos_status": true,
+      "n_loops": 1,
+      "list": [
+        "last 2323"
+      ],
+      "id": 3,
+      "run": false,
+      "start": false,
+      "rand_pos": false,
+      "end": true
+    }
+  ],
+  "counter": {
+    "actions": 162
+  }
+}
