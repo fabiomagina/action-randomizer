@@ -5,17 +5,15 @@
       "title": "first",
       "n_loops": 1,
       "run": false,
-      "rand_pos": true,
+      "rand_pos": false,
       "list": [
-        "first 123123",
-        ""
+        "action 1111"
       ],
-      "start": true,
-      "end": false
+      "start": true
     },
     {
       "id": 2,
-      "title": "Mid",
+      "title": "Middle",
       "n_loops": 1,
       "run": true,
       "rand_pos": true,
@@ -26,17 +24,14 @@
       "start": false
     },
     {
-      "title": "Last",
-      "status": 0,
-      "pos_status": true,
-      "n_loops": 1,
-      "list": [
-        "last 2323"
-      ],
       "id": 3,
+      "title": "Last",
+      "n_loops": 1,
       "run": false,
-      "start": false,
       "rand_pos": false,
+      "list": [
+        "action 9999"
+      ],
       "end": true
     }
   ],
