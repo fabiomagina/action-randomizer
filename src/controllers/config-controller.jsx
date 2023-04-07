@@ -1,5 +1,5 @@
-import ButtonOperation from "../components/ButtonOperation";
-import ButtonStatus from "../components/ButtonStatus";
+import ButtonOperation from "../components/Buttons/ButtonOperation";
+import ButtonStatus from "../components/Buttons/ButtonStatus";
 
 export function renderConfigTable(types, setTypes, setType, setReload) {
     if (types.length !== 0)

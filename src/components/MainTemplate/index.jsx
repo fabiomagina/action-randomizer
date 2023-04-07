@@ -1,7 +1,7 @@
 import React from "react";
-import "./PageView.css"
+import "./MainTemplate.css"
 
-const PageView = (props) => {
+const MainTemplate = (props) => {
     return (
         <div className="template__main">
             <div className="row__title">
@@ -12,5 +12,5 @@ const PageView = (props) => {
     )
 }
 
-export default PageView
+export default MainTemplate
 

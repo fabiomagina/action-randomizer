@@ -1,10 +1,10 @@
 import "./MacroConfig.css"
-import { Link } from 'react-router-dom'
-import PageView from "../../components/PageView";
-import { openModal } from "../../controllers/modal-controller";
-import { renderConfigTable } from "../../controllers/config-controller";
+import { Link } from 'react-router-dom';
+import PageView from "../../../components/MainTemplate";
+import { openModal } from "../../../controllers/modal-controller";
+import { renderConfigTable } from "../../../controllers/config-controller";
 import { useContext } from 'react'
-import { ActionsContext } from "../../controllers/context/Actions";
+import { ActionsContext } from "../../../controllers/context/Actions";
 
 export default function MacroConfig() {
     const { types, setTypes, type, setType, setReload } = useContext(ActionsContext)

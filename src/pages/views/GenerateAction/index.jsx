@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./GenerateAction.css"
-import PageView from "../../components/PageView";
-import { sendAction } from "../../controllers/axios";
+import PageView from "../../../components/MainTemplate";
+import { sendAction } from "../../../controllers/axios";
 import {
     handleFullCycle, generateAction, clear, groupsFromTypes
-} from "../../controllers/generate-controller";
-import { ActionsContext } from "../../controllers/context/Actions";
+} from "../../../controllers/generate-controller";
+import { ActionsContext } from "../../../controllers/context/Actions";
 
 export default function GenerateAction() {
     const { types, setReload } = useContext(ActionsContext)

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AiOutlineClear, AiFillDelete, AiFillEdit } from "react-icons/ai";
-import { ActionsContext } from "../controllers/context/Actions";
-import { openModal } from "../controllers/modal-controller";
+import { ActionsContext } from "../../../controllers/context/Actions";
+import { openModal } from "../../../controllers/modal-controller";
 import './ButtonOperations.css'
 
 export default function ButtonOperation({ type, modalType }) {

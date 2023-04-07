@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
-import { ActionsContext } from "../../controllers/context/Actions";
-import { sendAction} from "../../controllers/axios";
-import PageView from "../../components/PageView";
+import { ActionsContext } from "../../../controllers/context/Actions";
+import { sendAction} from "../../../controllers/axios";
+import PageView from "../../../components/MainTemplate";
 import "./InsertAction.css"
 
 export default function InsertAction() {

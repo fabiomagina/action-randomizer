@@ -10,7 +10,8 @@
         "first 123123",
         ""
       ],
-      "start": true
+      "start": true,
+      "end": false
     },
     {
       "id": 2,
@@ -20,7 +21,9 @@
       "rand_pos": true,
       "list": [
         "md 222"
-      ]
+      ],
+      "end": false,
+      "start": false
     },
     {
       "title": "Last",

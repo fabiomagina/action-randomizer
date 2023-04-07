@@ -1,4 +1,4 @@
-import { closeModal } from '../controllers/modal-controller'
+import { closeModal } from '../../controllers/modal-controller'
 import './Modal.css'
 
 export default function renderModal({

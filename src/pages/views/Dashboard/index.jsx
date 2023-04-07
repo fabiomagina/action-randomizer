@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import Card from "../../components/Card"
-import { ActionsContext } from "../../controllers/context/Actions";
+import Card from "../../../components/Card"
+import { ActionsContext } from "../../../controllers/context/Actions";
 import './Dashboard.css'
 
 const baseUrl = 'http://localhost:3000'
