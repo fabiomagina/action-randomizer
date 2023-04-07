@@ -2,7 +2,7 @@ export default function runRandomizer(pureAction) {
     let newAction = ''
     let splittedActionLinesArray = pureAction.split('\n')
     splittedActionLinesArray.forEach(actionLine => {
-        newAction += addRandomToNumbers(actionLine) + '\n'
+        newAction += addRandomToNumbers(actionLine)
     })
     return newAction
 }
@@ -16,10 +16,10 @@ function addRandomToNumbers(actionLine) {
             return acc.replace(oldNumbersArray[i], newValue)
         }, actionLine)
         console.log(actionLine)
-        return newActionLine + '\n'
+        return newActionLine
     }
     if (actionLine)
-        return actionLine + '\n'
+        return actionLine
 }
 
 function addRandom(number) {

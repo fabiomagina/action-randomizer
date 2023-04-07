@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { ActionsContext, ActionsProvider } from '../controllers/context/Actions';
+import { ActionsContext } from '../controllers/context/Actions';
 import GenerateAction from './views/GenerateAction'
 import InsertAction from './views/InsertAction'
 import MacroConfig from './views/MacroConfig'
@@ -19,8 +19,8 @@ export default function Main() {
     const [mobile, setMobile] = useState(false)
 
     useEffect(function () {
-        handleDashboard()
-        setConfigView(false)
+            handleDashboard()
+            setConfigView(false)
     }, [dashboard])
 
     useEffect(function () {
@@ -117,12 +117,12 @@ export default function Main() {
                 <div className="view__dashboard">
                     <Dashboard />
                 </div>
-            {renderModals(type, setType, setReload)}
-            <div className="modal__container">
-                
+                {renderModals(type, setType, setReload)}
+                <div className="modal__container">
+
                 </div>
             </div>
-           
+
         </>
     )
 }
