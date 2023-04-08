@@ -1,9 +1,9 @@
-import "./Card.css";
+import "./DashboardCard.css";
 import React from "react";
 import ButtonOperation from "../Buttons/ButtonOperation";
 import ButtonStatus from "../Buttons/ButtonStatus";
 
-const card = ({ type, color, fontColor, setTypes, setReload, }) => {
+const DashboardCard = ({ type, color, fontColor, setTypes, setReload, }) => {
     const cardStyle = {
         backgroundColor: color || '#06132c',
         color: fontColor || '#FFF',
@@ -68,4 +68,4 @@ const card = ({ type, color, fontColor, setTypes, setReload, }) => {
     );
 };
 
-export default card
+export default DashboardCard

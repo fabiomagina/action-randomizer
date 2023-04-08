@@ -6,10 +6,7 @@
       "n_loops": 1,
       "run": false,
       "rand_pos": false,
-      "list": [
-        "action 1111"
-      ],
-      "start": true
+      "list": []
     },
     {
       "id": 2,
