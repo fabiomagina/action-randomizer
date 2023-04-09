@@ -11,14 +11,14 @@
         "first 2222"
       ],
       "start": true,
-      "chance": "1"
+      "chance": "100"
     },
     {
       "id": 2,
       "title": "Middle",
       "n_loops": 1,
       "run": true,
-      "rand_pos": true,
+      "rand_pos": false,
       "list": [
         "md 222"
       ],

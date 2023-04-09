@@ -4,7 +4,7 @@ import getTypesIds from "./generateUtils/getTypesIds"
 import getRandOrderToFixedActions from "./generateUtils/getRandOrderToFixedActions"
 
 async function generateAction(nLoops, types, callback, fullCycle, fixedType) {
-    let actionsOrderArray = getRandOrderToFixedActions(2)
+    let actionsOrderArray = getRandOrderToFixedActions(+nLoops)
     let activeTypesIds = getTypesIds(types, fixedType)
     let newMacro = ''
     for (let i = 0; i < nLoops; i++) {
