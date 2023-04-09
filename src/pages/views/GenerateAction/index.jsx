@@ -4,6 +4,7 @@ import PageView from "../../../components/MainTemplate";
 import { ActionsContext } from "../../../controllers/context/Actions";
 import fixedGroups from "../../../controllers/fixedGroups";
 import generateAction from "../../../utils/generate/generateAction";
+import { sendAction } from "../../../controllers/axios";
 
 export default function GenerateAction() {
     const { types, setReload } = useContext(ActionsContext)
