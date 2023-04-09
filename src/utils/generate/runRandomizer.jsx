@@ -7,6 +7,7 @@ export default function runRandomizer(pureAction) {
     return newAction
 }
 
+
 function addRandomToNumbers(actionLine) {
     let oldNumbersArray = actionLine.match(/(\d+)/g)
     if (oldNumbersArray) {

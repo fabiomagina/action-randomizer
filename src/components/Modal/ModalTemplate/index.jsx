@@ -1,8 +1,8 @@
-import { closeModal } from '../../../controllers/modal-controller'
+import closeModal from '../../../utils/modal/closeModal'
 import './ModalTemplate.css'
 
 const ModalTemplate = ({ btnDesc, modalStyle, modalTitle, modal__main, callback }) => {
-    
+
     return (
         <div key={modalStyle} className={`modal ${modalStyle}`} >
             <div className="row__modal--title">

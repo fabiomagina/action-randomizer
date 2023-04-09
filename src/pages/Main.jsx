@@ -7,7 +7,7 @@ import Dashboard from "./views/Dashboard";
 import Menu from '../components/Menu';
 import "./Main.css"
 import { AiOutlineMenu } from 'react-icons/ai';
-import { renderModals } from '../controllers/modal-controller';
+import renderModals from '../utils/modal/renderModals';
 
 export default function Main() {
     const { type, setType, setReload } = useContext(ActionsContext)

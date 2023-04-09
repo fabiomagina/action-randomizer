@@ -1,7 +1,7 @@
 import "./MacroConfig.css"
 import { Link } from 'react-router-dom';
 import PageView from "../../../components/MainTemplate";
-import { openModal } from "../../../controllers/modal-controller";
+import openModal from "../../../utils/modal/openModal"
 import ConfigTable from "../../../components/ConfigTable/ConfigTable";
 
 export default function MacroConfig() {

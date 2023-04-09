@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AiOutlineClear, AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { ActionsContext } from "../../../controllers/context/Actions";
-import { openModal } from "../../../controllers/modal-controller";
+import  openModal from "../../../utils/modal/openModal";
 import './ButtonOperations.css'
 
 export default function ButtonOperation({ type, modalType }) {
@@ -25,6 +25,4 @@ export default function ButtonOperation({ type, modalType }) {
     return <button className="btn__operations" id={type.id} onClick={
         () => openModal(type, modalTypes[modalType].style, setType, setReload)}>
         {modalTypes[modalType].svg} </button>
-
-
 }
