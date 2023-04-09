@@ -28,13 +28,4 @@ Macro based on Mouse Record actions.<br>
 </p>
 <br>
 
-## Custom Versions
 
-### Instagram Action Randomizer
-
-<p align="center">
-
-![actionRandomizer](https://user-images.githubusercontent.com/30575553/214922775-8eeb278a-44c9-44b3-b35e-e98954b05304.JPG)
-
-</p>
- 
