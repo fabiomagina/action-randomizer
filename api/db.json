@@ -3,14 +3,15 @@
     {
       "id": 1,
       "title": "first",
-      "n_loops": "3",
+      "n_loops": "2",
       "run": false,
-      "rand_pos": true,
+      "rand_pos": false,
       "list": [
-        "first 232"
+        "first 1111",
+        "first 2222"
       ],
       "start": true,
-      "end": false
+      "chance": "1"
     },
     {
       "id": 2,
@@ -29,11 +30,12 @@
       "title": "Last",
       "n_loops": 1,
       "run": false,
-      "rand_pos": true,
+      "rand_pos": false,
       "list": [
-        "action 9999"
+        "last 1111",
+        "last 2222"
       ],
-      "end": false
+      "end": true
     }
   ],
   "counter": {

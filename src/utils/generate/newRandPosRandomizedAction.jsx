@@ -1,4 +1,4 @@
-import runRandomizer from "./runRandomizer"
+import runRandomizer from "./generateUtils/runRandomizer"
 import getRandomItem from "./generateUtils/getRandomItem"
 import shouldRun from "./generateUtils/shouldRun"
 
